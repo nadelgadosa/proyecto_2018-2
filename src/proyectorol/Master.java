@@ -18,19 +18,15 @@ public class Master extends Usuario {
         this.juegos = juegos;
         this.permisos = permisos;
     }
-
     public int getJuegos() {
         return juegos;
     }
-
     public void setJuegos(int juegos) {
         this.juegos = juegos;
     }
-
     public int getPermisos() {
         return permisos;
     }
-
     public void setPermisos(int permisos) {
         this.permisos = permisos;
     }

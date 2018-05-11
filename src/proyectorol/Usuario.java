@@ -25,6 +25,7 @@ public class Usuario {
     public void setClave(String clave) {
         this.clave = clave;
     }
+    
     public static void main(String[] args) {
     }
     // public static ArrayList<SeleccionFutbol> integrantes = new ArrayList<SeleccionFutbol>();

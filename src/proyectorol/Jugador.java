@@ -1,7 +1,7 @@
 package proyectorol;
 public class Jugador extends Usuario {
    private int personajes;
-   private personaje personaje = new personaje();
+   private personaje personaje ;
 
     public Jugador(int personajes, String nombreUsuario, String clave) {
         super(nombreUsuario, clave);
