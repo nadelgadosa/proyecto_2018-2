@@ -1,23 +1,23 @@
 package proyectorol;
 public class Usuario {
-    private String nombreUsusario, clave;
+    private String nombreUsuario, clave;
 
-    public Usuario(String nombreUsusario, String clave) {
-        this.nombreUsusario = nombreUsusario;
+    public Usuario(String nombreUsuario, String clave) {
+        this.nombreUsuario = nombreUsuario;
         this.clave = clave;
     }
 
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "nombre de usuario:\t"+getNombreUsuario(); 
     }
   
     
-    public String getNombreUsusario() {
-        return nombreUsusario;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
-    public void setNombreUsusario(String nombreUsusario) {
-        this.nombreUsusario = nombreUsusario;
+    public void setNombreUsuario(String nombreUsusario) {
+        this.nombreUsuario = nombreUsusario;
     }
     public String getClave() {
         return clave;
@@ -26,7 +26,10 @@ public class Usuario {
         this.clave = clave;
     }
     
+    
+    
+    
     public static void main(String[] args) {
     }
-    // public static ArrayList<SeleccionFutbol> integrantes = new ArrayList<SeleccionFutbol>();
+   
 }
