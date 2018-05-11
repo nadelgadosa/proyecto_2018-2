@@ -12,9 +12,9 @@ public class Maps {
     
     @Override
     public String toString() {
-        return ""; 
+        return "nombre: "+getNombre()+"\ndescripcion: "+getDescripcion()+"\nlink: "+getLink(); 
     }
-    
+     
     public Maps() {
     }
     public String getNombre() {
