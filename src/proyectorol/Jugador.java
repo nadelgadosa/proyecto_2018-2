@@ -1,4 +1,15 @@
 package proyectorol;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.ObjectInputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Jugador extends Usuario {
     
    private int personajes;
@@ -21,6 +32,82 @@ public class Jugador extends Usuario {
     
     
     
+    
+    
+    
+    
+    public Jugador BuscarUsuario(String user){
+        
+        Jugador jugador = new Jugador();
+        try{
+            
+            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Jugador\\"+user+".ser").toPath();
+            final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
+            jugador = (Jugador)leerUsuario.readObject();
+            leerUsuario.close();
+            
+        }catch(Exception e){
+            
+        }
+        return jugador;
+    }
+    
+    public boolean verificarIngreso(Jugador jugador, String clave){
+        boolean aux;
+        if(jugador.getClave()== clave){
+            aux = true;
+        }else{
+            aux = false;
+        }
+        
+        
+        return aux;
+    }
+    
+    public String [] listaDePersonajes(String user){
+        String [] personajes = null;
+        int i=0;
+         try {
+            File inFile = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Jugador\\"+user+".txt");
+            FileReader fR = new FileReader(inFile);
+            Scanner in = new Scanner(inFile);      
+            while(in.hasNext()){
+                 
+                 personajes [i] = in.next();
+                 i++;
+                 
+            }
+            in.close();           
+        } catch (FileNotFoundException ex) {
+             System.out.println(ex);
+        } 
+        return personajes;
+    }
+    
+    public Personaje[] listaDeObjetosPersonaje (String [] nombresDeArchivos){
+        int i = nombresDeArchivos.length;
+        Personaje[] objetos = new Personaje[i];
+        for (int j = 0; j <= i ; j++) {
+            try{
+            
+            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Jugador\\"+nombresDeArchivos[j]+".ser").toPath();
+            final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
+            objetos [j] = (Personaje)leerUsuario.readObject();
+            leerUsuario.close();
+            
+        }catch(Exception e){
+                System.out.println(e);   
+        }
+        }
+        return objetos ;
+    }
+    
+    
+    
+    
+    
+    
+    
     public Jugador() {
         super(null, null);
     }
@@ -30,7 +117,6 @@ public class Jugador extends Usuario {
     public void setPersonajes(int personajes) {
         this.personajes = personajes;
     }
-    
     public Personaje getPersonaje(int numeroDePersonaje) {
         return personaje[numeroDePersonaje];
     }
