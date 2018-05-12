@@ -36,7 +36,7 @@ public class Jugador extends Usuario {
     
     
     
-     public Jugador BuscarUsuario(String user){
+    public Jugador BuscarUsuario(String user){
         
         Jugador jugador = new Jugador();
         try{
@@ -102,16 +102,6 @@ public class Jugador extends Usuario {
         return objetos ;
     }
     
-    public String descripcionDePersonaje(Personaje [] personaje, int i){
-        if(personaje[i]==null){
-          return "new";  
-        }else{
-       return personaje[i].toString(); 
-    }
-        
-        
-        
-    }
     
     
     
