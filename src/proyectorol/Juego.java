@@ -30,8 +30,9 @@ public class Juego {
         this.vitacora[numeroDeVitacora-1]= vitacora;
     
 }
-    
-    
+
+    public Juego() {
+    }
     public Vitacora[] getVitacora() {
         return vitacora;
     }
