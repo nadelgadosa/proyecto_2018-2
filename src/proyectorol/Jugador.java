@@ -26,8 +26,8 @@ public class Jugador extends Usuario {
     }
     
     
-    public void crearPersonaje( String nombre, String juego, String clase, String raza, String trasfondo, String personalidad, int nivel, int xpPoints, int heallPoints, int iniciativa, int fuerza, int inteligencia, int carisma, int destreza, int sabiduria, int velocidad, int armadura, Items[] equipo, Habilidad[] habilidades, Habilidad [] habilidadesEspeciales){
-    personaje[0] = new Personaje(nombre, juego, clase, raza, trasfondo, personalidad, nivel, xpPoints, heallPoints, iniciativa, fuerza, inteligencia, carisma, destreza, sabiduria, velocidad, armadura,  equipo,  null,  habilidades, habilidadesEspeciales);  
+    public void crearPersonaje(int numeroDePersonaje, String nombre, String juego, String clase, String raza, String trasfondo, String personalidad, int nivel, int xpPoints, int heallPoints, int iniciativa, int fuerza, int inteligencia, int carisma, int destreza, int sabiduria, int velocidad, int armadura, Items[] equipo, Items[] objetos, Habilidad[] habilidades, Habilidad [] habilidadesEspeciales){
+    personaje[numeroDePersonaje] = new Personaje(nombre, juego, clase, raza, trasfondo, personalidad, nivel, xpPoints, heallPoints, iniciativa, fuerza, inteligencia, carisma, destreza, sabiduria, velocidad, armadura,  equipo,  objetos,  habilidades, habilidadesEspeciales);  
     }
     
     
@@ -102,17 +102,10 @@ public class Jugador extends Usuario {
         return objetos ;
     }
     
-    public String descripcionDePersonaje(Personaje [] personaje, int i){
-        if(personaje[i]==null){
-          return "new";  
-        }else{
-       return personaje[i].toString(); 
-    }
-        
-        
-        
-    }
-     
+    
+    
+    
+    
     
     
     public Jugador() {
