@@ -47,7 +47,7 @@ public class Master extends Usuario {
        
        
       
- public Master BuscarUsuario(String user){
+     public Master BuscarUsuario(String user){
         
         Master master = new Master();
         try{

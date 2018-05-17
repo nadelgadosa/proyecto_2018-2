@@ -18,6 +18,7 @@ public class Vitacora {
     
     public Vitacora() {
     }
+    
     public String getFecha() {
         return fecha;
     }
