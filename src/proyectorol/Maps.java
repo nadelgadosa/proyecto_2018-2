@@ -1,4 +1,10 @@
 package proyectorol;
+
+import java.io.File;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 public class Maps {
     
     
@@ -13,6 +19,22 @@ public class Maps {
     @Override
     public String toString() {
         return "nombre: "+getNombre()+"\ndescripcion: "+getDescripcion()+"\nlink: "+getLink(); 
+    }
+    
+    
+    public void saveMaps(Maps maps){
+        
+        
+        final Path archivoSer = new File(maps.getNombre()).toPath();
+        try {
+            final ObjectOutputStream guardarMapa = new ObjectOutputStream(Files.newOutputStream(archivoSer));
+            guardarMapa.writeObject(maps);
+            guardarMapa.close();
+        } catch (Exception ex) {
+            
+        }
+        
+        
     }
      
     public Maps() {

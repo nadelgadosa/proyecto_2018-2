@@ -1,4 +1,10 @@
-package proyectorol;
+ package proyectorol;
+
+import java.io.File;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 public class Vitacora {
   private int numeroDeVitacora ; 
   private String fecha, progreso;
@@ -18,6 +24,10 @@ public class Vitacora {
     
     public Vitacora() {
     }
+    
+    
+    
+   
     
     public String getFecha() {
         return fecha;

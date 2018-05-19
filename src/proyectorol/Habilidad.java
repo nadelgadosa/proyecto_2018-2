@@ -1,4 +1,10 @@
 package proyectorol;
+
+import java.io.File;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 public class Habilidad {
     
     
@@ -15,6 +21,22 @@ private int modificador, usos;
     @Override
     public String toString() {
         return "nombre: "+getNombre()+"\ndescripcion: "+getDescripcion()+"\nmodificador: "+getModificador()+"\nusos: "+getUsos(); 
+    }
+    
+    
+     public void saveHabilidad(Habilidad habilidad){
+        
+        
+        final Path archivoSer = new File(habilidad.getNombre()).toPath();
+        try {
+            final ObjectOutputStream guardarHabilidad = new ObjectOutputStream(Files.newOutputStream(archivoSer));
+            guardarHabilidad.writeObject(habilidad);
+            guardarHabilidad.close();
+        } catch (Exception ex) {
+            
+        }
+        
+        
     }
     
     public Habilidad() {
