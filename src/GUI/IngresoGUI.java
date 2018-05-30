@@ -31,6 +31,7 @@ public class IngresoGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Usuario = new javax.swing.JTextField();
@@ -39,80 +40,73 @@ public class IngresoGUI extends javax.swing.JFrame {
         master = new javax.swing.JRadioButton();
         entrar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+
+        jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
+        setAlwaysOnTop(true);
+        setAutoRequestFocus(false);
+        setLocation(new java.awt.Point(0, 0));
+        setLocationByPlatform(true);
+        setMinimumSize(new java.awt.Dimension(335, 227));
+        setSize(new java.awt.Dimension(0, 0));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("usuario:");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("USUARIO");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 21, 72, -1));
 
-        jLabel2.setText("contraceña:");
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("CONTRASEÑA:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 18, 143, -1));
 
-        contraceña.setText("jTextField1");
+        contraceña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraceñaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(contraceña, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 143, -1));
 
         buttonGroup1.add(jugador);
+        jugador.setForeground(new java.awt.Color(255, 255, 255));
         jugador.setText("jugador");
         jugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jugadorActionPerformed(evt);
             }
         });
+        getContentPane().add(jugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 17, -1, -1));
 
         buttonGroup1.add(master);
+        master.setForeground(new java.awt.Color(255, 255, 255));
         master.setText("master");
+        getContentPane().add(master, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, -1, -1));
 
-        entrar.setText("iniciar");
+        entrar.setText("LOGIN");
         entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entrarActionPerformed(evt);
             }
         });
+        getContentPane().add(entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
 
-        jButton1.setText("nuevo usuario");
+        jButton1.setText("REGISTRO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Usuario)
-                    .addComponent(contraceña, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jugador)
-                    .addComponent(master))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(entrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(68, 68, 68))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jugador))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(contraceña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(master)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(entrar)
-                    .addComponent(jButton1))
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/green-dragon-battle1.jpg"))); // NOI18N
+        jLabel5.setToolTipText("");
+        jLabel5.setAlignmentY(0.0F);
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 340, 230));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -138,6 +132,14 @@ public class IngresoGUI extends javax.swing.JFrame {
 
     
     }//GEN-LAST:event_entrarActionPerformed
+
+    private void contraceñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraceñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraceñaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,6 +184,8 @@ public class IngresoGUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JRadioButton jugador;
     private javax.swing.JRadioButton master;
     // End of variables declaration//GEN-END:variables
