@@ -24,6 +24,9 @@ private int modificador, usos;
     }
     
     
+    
+    
+    
      public void saveHabilidad(Habilidad habilidad){
         
         
@@ -39,6 +42,11 @@ private int modificador, usos;
         
     }
     
+     
+     
+     
+     
+     
     public Habilidad() {
     }
     public String getDescripcion() {

@@ -16,12 +16,10 @@ public class Vitacora {
         this.progreso = progreso;
         this.items = items;
     }
- 
     @Override
     public String toString() {
         return "numero de vitacora: "+getNumeroDeVitacora()+"\nfecha: "+getFecha()+"\nprogreso: "+getProgreso()+"\nitems: "+getItems(); 
     }
-    
     public Vitacora() {
     }
     

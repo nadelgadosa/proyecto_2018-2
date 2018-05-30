@@ -15,11 +15,13 @@ public class Maps {
         this.descripcion = descripcion;
         this.link = link;
     }
-    
     @Override
     public String toString() {
         return "nombre: "+getNombre()+"\ndescripcion: "+getDescripcion()+"\nlink: "+getLink(); 
     }
+    
+    
+    
     
     
     public void saveMaps(Maps maps){
@@ -37,6 +39,11 @@ public class Maps {
         
     }
      
+    
+    
+    
+    
+    
     public Maps() {
     }
     public String getNombre() {
