@@ -1,6 +1,7 @@
-package proyectorol;
+package data;
 
 import java.io.File;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -41,7 +42,22 @@ private int modificador, usos;
         
         
     }
-    
+     public Habilidad leerObjetoHabilidad(String nombreObjeto){
+        Habilidad objeto = new Habilidad();
+        try{
+            
+            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Habilidades\\"+nombreObjeto+".ser").toPath();
+            final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
+            objeto  = (Habilidad)leerUsuario.readObject();
+            leerUsuario.close();
+            
+        }catch(Exception e){
+                System.out.println(e);   
+        } 
+        
+        
+        return objeto;
+    }
      
      
      

@@ -1,6 +1,7 @@
-package proyectorol;
+package data;
 
 import java.io.File;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -38,7 +39,22 @@ public class Maps {
         
         
     }
-     
+    public Maps leerObjetoMaps(String nombreObjeto){
+        Maps objeto = new Maps();
+        try{
+            
+            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Maps\\"+nombreObjeto+".ser").toPath();
+            final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
+            objeto  = (Maps)leerUsuario.readObject();
+            leerUsuario.close();
+            
+        }catch(Exception e){
+                System.out.println(e);   
+        } 
+        
+        
+        return objeto;
+    } 
     
     
     

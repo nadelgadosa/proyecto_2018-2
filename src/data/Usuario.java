@@ -1,4 +1,4 @@
-package proyectorol;
+package data;
 public class Usuario {
     private String nombreUsuario, clave;
 
