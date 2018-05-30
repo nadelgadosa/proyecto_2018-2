@@ -1,4 +1,7 @@
 package data;
+
+import GUI.JugadorGUI;
+
 public class Usuario {
     private String nombreUsuario, clave;
 
@@ -29,7 +32,6 @@ public class Usuario {
     
     
     
-    public static void main(String[] args) {
-    }
+    
    
 }
