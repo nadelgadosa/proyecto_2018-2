@@ -24,7 +24,7 @@ public class Ingreso {
    
 
 }
-    public void IngresoJugador(String usuario, String contraceña){
+    public void IngresoJugador(String usuario, String contraseña){
         boolean ingresar;
         String [] personajes;
         Personaje[] objetos = new Personaje[3];
@@ -32,7 +32,7 @@ public class Ingreso {
     Jugador jugadorActual = new Jugador();
     JugadorGUI jugador = new JugadorGUI();
     jugadorActual = jugadorActual.BuscarUsuario(usuario);
-    ingresar = jugadorActual.verificarIngreso(jugadorActual, contraceña);
+    ingresar = jugadorActual.verificarIngreso(jugadorActual, contraseña);
     if(ingresar){
         personajes = jugadorActual.listaDePersonajes(usuario);
         for (int i = 0; i < personajes.length; i++) {
