@@ -52,26 +52,33 @@ public class Master extends Usuario {
        
       
      public Master BuscarUsuario(String user){
-        
+         System.out.println("entra al metodo buscar usuario de data");
         Master master = new Master();
         try{
-            
+            System.out.println("entra al try catch");
             final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Master\\"+user+".ser").toPath();
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             master = (Master)leerUsuario.readObject();
             leerUsuario.close();
+            System.out.println("lee el usuario   "+ master.getClave());
+            
             
         }catch(Exception e){
-            
+            System.out.println("no entra al try catch"); 
         }
         return master;
     }
     
     public boolean verificarIngreso(Master master, String clave){
+        System.out.println("entra a meto verificar ingreso");
         boolean aux;
-        if(master.getClave()== clave){
+        String a=master.getClave();
+        System.out.println(master.getClave()+"-"+clave);
+        if(clave == a){
+            System.out.println("clave correcta");
             aux = true;
         }else{
+            System.out.println("clave incorrecta");
             aux = false;
         }
         
@@ -125,8 +132,19 @@ public class Master extends Usuario {
     }    
     } 
     
-    public void crearObjetoMaster(String usuario, String contraseña){
-        File outFile = new File ("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Master\\"+usuario+".txt");
+    public String descripcionDeJuego(Juego [] juego, int i){
+        if(juego[i]==null){
+          return "new";  
+        }else{
+       return juego[i].toString(); 
+    }
+        
+        
+        
+    }
+    
+    public void crearObjetoMaster(String usuario, String contraseña, String ruta){
+        File outFile = new File (ruta+".txt");
         try {
             
             PrintWriter pW = new PrintWriter(outFile);
@@ -142,7 +160,7 @@ public class Master extends Usuario {
         cons.setJuego(null, cons.getJuegos());
         cons.setPermisos(0);
         try{
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Master\\"+usuario+".ser").toPath();
+            final Path archivoSer = new File(ruta+".ser").toPath();
             final ObjectOutputStream guardarMaster = new  ObjectOutputStream(Files.newOutputStream(archivoSer));
             guardarMaster.writeObject(cons);
             System.out.println("se creo el .ser");

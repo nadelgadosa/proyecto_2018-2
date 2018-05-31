@@ -1,6 +1,8 @@
 package GUI;
 import businesLogic.IngresoYRegistro;
 import data.Jugador;
+import java.awt.Color;
+import javax.swing.JButton;
 /**
  *
  * @author beto arias
@@ -46,7 +48,6 @@ public class IngresoGUI extends javax.swing.JFrame {
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/dungeons_and_dragons.jpg"))); // NOI18N
 
-        txtUsuario.setPreferredSize(new java.awt.Dimension(6, 20));
         txtUsuario.setVerifyInputWhenFocusTarget(false);
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +59,11 @@ public class IngresoGUI extends javax.swing.JFrame {
         BtnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BtnEntrarMouseClicked(evt);
+            }
+        });
+        BtnEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEntrarActionPerformed(evt);
             }
         });
 
@@ -157,16 +163,18 @@ public class IngresoGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_RBJugadorActionPerformed
 
     private void BtnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnEntrarMouseClicked
-        String User="";
+        IngresoYRegistro cons = new IngresoYRegistro();
+        String User, pass;
 
         User= txtUsuario.getText();
-        String pass= new String(Password.getPassword());
-         if (RBJugador.isSelected()){
-//        cons.IngresoJugador(user, password);
-    }
-    if(RBMaster.isSelected()){
-        
-}
+        pass= Password.getText();
+        if (RBJugador.isSelected()){
+            System.out.println("entra al buton action");
+        cons.IngresoJugador(User, pass);
+        }
+        if(RBMaster.isSelected()){
+        cons.IngresoMaster(User,pass);
+        }
         
         
 
@@ -182,6 +190,10 @@ public class IngresoGUI extends javax.swing.JFrame {
 RegistroGUI cons = new RegistroGUI();
         cons.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_BtnRegistrarActionPerformed
+
+    private void BtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEntrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,6 +228,14 @@ RegistroGUI cons = new RegistroGUI();
                 new IngresoGUI().setVisible(true);
             }
         });
+    }
+
+    public JButton getBtnEntrar() {
+        return BtnEntrar;
+    }
+
+    public void setBtnEntrar() {
+        BtnEntrar.setBackground(Color.red);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

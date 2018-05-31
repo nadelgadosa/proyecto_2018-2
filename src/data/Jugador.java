@@ -40,26 +40,32 @@ public class Jugador extends Usuario {
     
     
     public Jugador BuscarUsuario(String user){
-        
+        System.out.println("entra al metodo buscar usuario en data");
         Jugador jugador = new Jugador();
+        final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Jugador\\"+user+".ser").toPath();
         try{
             
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Jugador\\"+user+".ser").toPath();
+           
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             jugador = (Jugador)leerUsuario.readObject();
             leerUsuario.close();
             
-        }catch(Exception e){
             
+        }catch(Exception e){
+            System.out.println("no entra al try chatch de buscar usuario");
         }
         return jugador;
     }
     
     public boolean verificarIngreso(Jugador jugador, String clave){
+        System.out.println("entra al metodo verificar ingreso");
         boolean aux;
+        System.out.println(jugador.getClave());
         if(jugador.getClave()== clave){
+            System.out.println("clave correcta");
             aux = true;
         }else{
+            System.out.println("clave incorrecta");
             aux = false;
         }
         
@@ -68,6 +74,7 @@ public class Jugador extends Usuario {
     }
     
     public String [] listaDePersonajes(String user){
+        System.out.println("ingresa al metodo lista de personajes de data");
         String [] personajes = null;
         int i=0;
          try {
@@ -80,7 +87,8 @@ public class Jugador extends Usuario {
                  i++;
                  
             }
-            in.close();           
+            in.close(); 
+             System.out.println("lee la lista de los personajes (metodo de data)");
         } catch (FileNotFoundException ex) {
              System.out.println(ex);
         } 
@@ -88,8 +96,9 @@ public class Jugador extends Usuario {
     }
     
     public Personaje[] listaDeObjetosPersonaje (String [] nombresDeArchivos){
+        System.out.println("entra al metodo para leer los objetos personaje de la data, metodo de data");
         int i = nombresDeArchivos.length;
-        Personaje[] objetos = new Personaje[i];
+        Personaje[] objetos = new Personaje[3];
         for (int j = 0; j <= i ; j++) {
             try{
             
@@ -97,8 +106,9 @@ public class Jugador extends Usuario {
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             objetos [j] = (Personaje)leerUsuario.readObject();
             leerUsuario.close();
-            
+                System.out.println("lee objetos personaje(los .ser)");
         }catch(Exception e){
+                System.out.println("no lee los .ser");
                 System.out.println(e);   
         }
         }
@@ -116,10 +126,10 @@ public class Jugador extends Usuario {
         
     }
     
-    public void crearObjetoJugador(String usuario, String contraseña){
+    public void crearObjetoJugador(String usuario, String contraseña, String ruta){
                      
         try {
-            File outFile = new File ("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Jugador\\"+usuario+".txt");
+            File outFile = new File (ruta+".txt");
             PrintWriter pW = new PrintWriter(outFile);
             pW.close();
             System.out.println("se creo el .txt");
@@ -133,10 +143,10 @@ public class Jugador extends Usuario {
         cons.setClave(contraseña);
         cons.setPersonajes(0);
         cons.setPersonaje( null , cons.getPersonajes());
-        final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Jugador\\"+usuario+".ser").toPath();
+        final Path archivoSer = new File(ruta+".ser").toPath();
         try {
             final ObjectOutputStream guardarJugador = new ObjectOutputStream(Files.newOutputStream(archivoSer));
-            guardarJugador.writeObject(cons);
+            guardarJugador.writeObject(cons);// no se ejecuta desde esta linea, y se salta el resto del try catch, la linea de arriva crea un archivo .ser que no se puede usar
             System.out.println("se creo el .ser");
             guardarJugador.close();
         } catch (Exception ex) {

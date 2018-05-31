@@ -31,34 +31,34 @@ public class MasterGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        nombreJugador = new javax.swing.JTextField();
-        personaje1 = new javax.swing.JButton();
-        personaje2 = new javax.swing.JButton();
-        personaje3 = new javax.swing.JButton();
-        personaje4 = new javax.swing.JButton();
+        nombreMaster = new javax.swing.JTextField();
+        juego1 = new javax.swing.JButton();
+        juego2 = new javax.swing.JButton();
+        juego3 = new javax.swing.JButton();
+        juego4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Master");
 
-        nombreJugador.addActionListener(new java.awt.event.ActionListener() {
+        nombreMaster.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreJugadorActionPerformed(evt);
+                nombreMasterActionPerformed(evt);
             }
         });
 
-        personaje1.setText("jButton1");
-        personaje1.addActionListener(new java.awt.event.ActionListener() {
+        juego1.setText("jButton1");
+        juego1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                personaje1ActionPerformed(evt);
+                juego1ActionPerformed(evt);
             }
         });
 
-        personaje2.setText("jButton2");
+        juego2.setText("jButton2");
 
-        personaje3.setText("jButton3");
+        juego3.setText("jButton3");
 
-        personaje4.setText("jButton4");
+        juego4.setText("jButton4");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,16 +70,16 @@ public class MasterGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombreMaster, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(personaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(juego1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(personaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(juego2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(personaje3, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(juego3, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(personaje4, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(juego4, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -87,27 +87,27 @@ public class MasterGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(nombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombreMaster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(personaje1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 683, Short.MAX_VALUE)
-                    .addComponent(personaje2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(personaje3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(personaje4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(juego1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 683, Short.MAX_VALUE)
+                    .addComponent(juego2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(juego3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(juego4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nombreJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreJugadorActionPerformed
+    private void nombreMasterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreMasterActionPerformed
       
-        nombreJugador.setText("nombre de usuario que recibe de ingreso");
-    }//GEN-LAST:event_nombreJugadorActionPerformed
+        nombreMaster.setText("nombre de usuario que recibe de ingreso");
+    }//GEN-LAST:event_nombreMasterActionPerformed
 
-    private void personaje1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personaje1ActionPerformed
+    private void juego1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_juego1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_personaje1ActionPerformed
+    }//GEN-LAST:event_juego1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,52 +146,57 @@ public class MasterGUI extends javax.swing.JFrame {
         });
     }
 
-    public JButton getPersonaje1() {
-        return personaje1;
+    public JButton getJuego1() {
+        return juego1;
     }
 
-    public void setPersonaje1(String texto) {
-        personaje1.setText(texto);
+    public void setJuego1(String text) {
+        juego1.setText(text);
     }
 
-    public JButton getPersonaje2() {
-        return personaje2;
+    public JButton getJuego2() {
+        return juego2;
     }
 
-    public JTextField getNombreJugador() {
-        return nombreJugador;
+    public void setJuego2(String text) {
+        juego2.setText(text);
     }
 
-    public void setNombreJugador(String texto) {
-        nombreJugador.setText(texto);
+    public JButton getJuego3() {
+        return juego3;
     }
 
-    public void setPersonaje2(String texto) {
-        personaje1.setText(texto);
+    public void setJuego3(String text) {
+        juego3.setText(text);
     }
 
-    public JButton getPersonaje3() {
-        return personaje3;
+    public JButton getJuego4() {
+        return juego4;
     }
 
-    public void setPersonaje3(String texto) {
-        personaje1.setText(texto);
+    public void setJuego4(String text) {
+        juego4.setText(text);
     }
 
-    public JButton getPersonaje4() {
-        return personaje4;
+    public JTextField getNombreMaster() {
+        return nombreMaster;
     }
 
-    public void setPersonaje4(String texto) {
-        personaje1.setText(texto);
+    public void setNombreMaster(String text) {
+        nombreMaster.setText(text);
     }
+
+ 
+
+   
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField nombreJugador;
-    private javax.swing.JButton personaje1;
-    private javax.swing.JButton personaje2;
-    private javax.swing.JButton personaje3;
-    private javax.swing.JButton personaje4;
+    private javax.swing.JButton juego1;
+    private javax.swing.JButton juego2;
+    private javax.swing.JButton juego3;
+    private javax.swing.JButton juego4;
+    private javax.swing.JTextField nombreMaster;
     // End of variables declaration//GEN-END:variables
 }

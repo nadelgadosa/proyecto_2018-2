@@ -1,8 +1,10 @@
 package data;
 
 import GUI.JugadorGUI;
+import java.io.Serializable;
 
-public class Usuario {
+public class Usuario implements Serializable{
+    private static final long serialVersionUID = 10L;
     private String nombreUsuario, clave;
 
     public Usuario(String nombreUsuario, String clave) {
