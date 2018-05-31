@@ -115,7 +115,7 @@ public class IngresoGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(BtnRegistrar)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

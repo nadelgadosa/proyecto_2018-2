@@ -48,6 +48,11 @@ public class JugadorGUI extends javax.swing.JFrame {
         });
 
         personaje1.setText("jButton1");
+        personaje1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                personaje1ActionPerformed(evt);
+            }
+        });
 
         personaje2.setText("jButton2");
 
@@ -99,6 +104,10 @@ public class JugadorGUI extends javax.swing.JFrame {
       
         nombreJugador.setText("nombre de usuario que recibe de ingreso");
     }//GEN-LAST:event_nombreJugadorActionPerformed
+
+    private void personaje1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personaje1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_personaje1ActionPerformed
 
     /**
      * @param args the command line arguments

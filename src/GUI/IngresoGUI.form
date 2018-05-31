@@ -51,7 +51,7 @@
                       <Component id="BtnRegistrar" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="28" max="32767" attributes="0"/>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Component id="fondo" alignment="0" max="32767" attributes="0"/>
