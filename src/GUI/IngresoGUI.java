@@ -1,5 +1,5 @@
 package GUI;
-import businesLogic.Ingreso;
+import businesLogic.IngresoYRegistro;
 import data.Jugador;
 /**
  *

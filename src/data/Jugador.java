@@ -3,7 +3,11 @@ package data;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
@@ -112,7 +116,34 @@ public class Jugador extends Usuario {
         
     }
     
-    
+    public void crearObjetoJugador(String usuario, String contraseña){
+                     
+        try {
+            File outFile = new File ("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Jugador\\"+usuario+".txt");
+            PrintWriter pW = new PrintWriter(outFile);
+            pW.close();
+            System.out.println("se creo el .txt");
+        } catch (IOException ex) {
+            Logger.getLogger(Jugador.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
+         
+        Jugador cons = new Jugador();
+        cons.setNombreUsuario(usuario);
+        cons.setClave(contraseña);
+        cons.setPersonajes(0);
+        cons.setPersonaje( null , cons.getPersonajes());
+        final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Jugador\\"+usuario+".ser").toPath();
+        try {
+            final ObjectOutputStream guardarJugador = new ObjectOutputStream(Files.newOutputStream(archivoSer));
+            guardarJugador.writeObject(cons);
+            System.out.println("se creo el .ser");
+            guardarJugador.close();
+        } catch (Exception ex) {
+            
+        }
+        
+    }
     
     
     

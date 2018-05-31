@@ -43,7 +43,7 @@ public class Maps {
         Maps objeto = new Maps();
         try{
             
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Maps\\"+nombreObjeto+".ser").toPath();
+            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Maps\\"+nombreObjeto+".ser").toPath();
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             objeto  = (Maps)leerUsuario.readObject();
             leerUsuario.close();

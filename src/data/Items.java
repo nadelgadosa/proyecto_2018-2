@@ -46,7 +46,7 @@ public class Items {
         Items objeto = new Items();
         try{
             
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Items\\"+nombreObjeto+".ser").toPath();
+            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Items\\"+nombreObjeto+".ser").toPath();
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             objeto  = (Items)leerUsuario.readObject();
             leerUsuario.close();

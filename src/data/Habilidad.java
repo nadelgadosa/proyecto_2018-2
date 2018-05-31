@@ -46,7 +46,7 @@ private int modificador, usos;
         Habilidad objeto = new Habilidad();
         try{
             
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Habilidades\\"+nombreObjeto+".ser").toPath();
+            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Habilidades\\"+nombreObjeto+".ser").toPath();
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             objeto  = (Habilidad)leerUsuario.readObject();
             leerUsuario.close();

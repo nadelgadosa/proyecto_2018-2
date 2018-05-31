@@ -67,7 +67,7 @@ public class Personaje {
         Personaje objeto = new Personaje();
       try{
             
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\NPCs\\"+nombreObjeto+".ser").toPath();
+            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\NPCs\\"+nombreObjeto+".ser").toPath();
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             objeto  = (Personaje)leerUsuario.readObject();
             leerUsuario.close();

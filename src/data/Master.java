@@ -4,7 +4,11 @@ package data;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
@@ -52,7 +56,7 @@ public class Master extends Usuario {
         Master master = new Master();
         try{
             
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Master\\"+user+".ser").toPath();
+            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Master\\"+user+".ser").toPath();
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             master = (Master)leerUsuario.readObject();
             leerUsuario.close();
@@ -120,6 +124,34 @@ public class Master extends Usuario {
        return juego[i].toString(); 
     }    
     } 
+    
+    public void crearObjetoMaster(String usuario, String contraseña){
+        File outFile = new File ("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Master\\"+usuario+".txt");
+        try {
+            
+            PrintWriter pW = new PrintWriter(outFile);
+            pW.close();
+            System.out.println("se creo el .txt");
+        } catch (IOException ex) {
+            Logger.getLogger(Master.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Master cons = new Master();
+        cons.setNombreUsuario(usuario);
+        cons.setClave(contraseña);
+        cons.setJuegos(0);
+        cons.setJuego(null, cons.getJuegos());
+        cons.setPermisos(0);
+        try{
+            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Master\\"+usuario+".ser").toPath();
+            final ObjectOutputStream guardarMaster = new  ObjectOutputStream(Files.newOutputStream(archivoSer));
+            guardarMaster.writeObject(cons);
+            System.out.println("se creo el .ser");
+            guardarMaster.close();
+        }catch(Exception e){
+            
+        }
+        
+    }
        
        
        

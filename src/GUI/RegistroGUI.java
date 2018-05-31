@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import businesLogic.IngresoYRegistro;
+
 /**
  *
  * @author beto arias
@@ -101,6 +103,11 @@ public class RegistroGUI extends javax.swing.JFrame {
         getContentPane().add(jRadioMaster, gridBagConstraints);
 
         BtnCrear.setText("CREAR");
+        BtnCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCrearActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 5;
@@ -124,6 +131,19 @@ public class RegistroGUI extends javax.swing.JFrame {
     private void TextPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextPasswordActionPerformed
+
+    private void BtnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCrearActionPerformed
+       IngresoYRegistro constructor = new IngresoYRegistro();
+       String usuario, contraseña;
+       usuario = TextUsuario.getText();
+       contraseña = TextPassword.getText();
+        if (jRadioJugador.isSelected()){
+           constructor.crearObjetoJugador(usuario, contraseña);
+       }
+        if (jRadioMaster.isSelected()){
+            constructor.crearObjetoMaster(usuario, contraseña);
+        }
+    }//GEN-LAST:event_BtnCrearActionPerformed
 
     /**
      * @param args the command line arguments

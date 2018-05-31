@@ -42,7 +42,7 @@ public class Juego {
     public void saveJuego(Juego juego){
         
         
-        final Path archivoSer = new File(juego.getNombre()).toPath();
+        final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Jugador\\"+juego.getNombre()+".ser").toPath();
         try {
             final ObjectOutputStream guardarJuego = new ObjectOutputStream(Files.newOutputStream(archivoSer));
             guardarJuego.writeObject(juego);
