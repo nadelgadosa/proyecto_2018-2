@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package GUI;
-
 import businesLogic.Ingreso;
 import data.Jugador;
-
 /**
  *
- * @author Usuario
+ * @author beto arias
  */
 public class IngresoGUI extends javax.swing.JFrame {
 
@@ -30,116 +23,165 @@ public class IngresoGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        Usuario = new javax.swing.JTextField();
-        contraceña = new javax.swing.JTextField();
-        jugador = new javax.swing.JRadioButton();
-        master = new javax.swing.JRadioButton();
-        entrar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-
-        jLabel3.setText("jLabel3");
+        lblContraseña = new javax.swing.JLabel();
+        LblUsuario = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        Password = new javax.swing.JPasswordField();
+        BtnEntrar = new javax.swing.JButton();
+        BtnRegistrar = new javax.swing.JButton();
+        RBMaster = new javax.swing.JRadioButton();
+        RBJugador = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
-        setAlwaysOnTop(true);
-        setAutoRequestFocus(false);
-        setLocation(new java.awt.Point(0, 0));
-        setLocationByPlatform(true);
-        setMinimumSize(new java.awt.Dimension(335, 227));
-        setSize(new java.awt.Dimension(0, 0));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("USUARIO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 21, 72, -1));
+        lblContraseña.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblContraseña.setForeground(new java.awt.Color(255, 255, 255));
+        lblContraseña.setText("Contraseña");
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("CONTRASEÑA:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
-        getContentPane().add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 18, 143, -1));
+        LblUsuario.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        LblUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        LblUsuario.setText("Usuario");
 
-        contraceña.addActionListener(new java.awt.event.ActionListener() {
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/dungeons_and_dragons.jpg"))); // NOI18N
+
+        txtUsuario.setPreferredSize(new java.awt.Dimension(6, 20));
+        txtUsuario.setVerifyInputWhenFocusTarget(false);
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contraceñaActionPerformed(evt);
+                txtUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(contraceña, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 143, -1));
 
-        buttonGroup1.add(jugador);
-        jugador.setForeground(new java.awt.Color(255, 255, 255));
-        jugador.setText("jugador");
-        jugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jugadorActionPerformed(evt);
+        BtnEntrar.setText("ENTRAR");
+        BtnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnEntrarMouseClicked(evt);
             }
         });
-        getContentPane().add(jugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 17, -1, -1));
 
-        buttonGroup1.add(master);
-        master.setForeground(new java.awt.Color(255, 255, 255));
-        master.setText("master");
-        getContentPane().add(master, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, -1, -1));
-
-        entrar.setText("LOGIN");
-        entrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entrarActionPerformed(evt);
+        BtnRegistrar.setText("REGISTRAR");
+        BtnRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnRegistrarMouseClicked(evt);
             }
         });
-        getContentPane().add(entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
-
-        jButton1.setText("REGISTRO");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnRegistrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/green-dragon-battle1.jpg"))); // NOI18N
-        jLabel5.setToolTipText("");
-        jLabel5.setAlignmentY(0.0F);
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 340, 230));
+        RBMaster.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        RBMaster.setForeground(new java.awt.Color(255, 255, 255));
+        RBMaster.setText("Master");
+        RBMaster.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RBMasterActionPerformed(evt);
+            }
+        });
+
+        RBJugador.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        RBJugador.setForeground(new java.awt.Color(255, 255, 255));
+        RBJugador.setText("Jugador");
+        RBJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RBJugadorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtnEntrar)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblContraseña)
+                        .addComponent(LblUsuario)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Password)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RBMaster)
+                            .addComponent(RBJugador)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(BtnRegistrar)))
+                .addContainerGap(28, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(115, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblUsuario)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RBMaster))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblContraseña)
+                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RBJugador))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnEntrar)
+                    .addComponent(BtnRegistrar))
+                .addGap(39, 39, 39))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugadorActionPerformed
-        
-    }//GEN-LAST:event_jugadorActionPerformed
-
-    private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
-     
-        Ingreso cons = new Ingreso();
-    String user, password;
-    user = Usuario.getText();
-    password=  contraceña.getText();
-    if (jugador.isSelected()){
-        cons.IngresoJugador(user, password);
-    }
-    if(master.isSelected()){
-        
-    }
-   
-
-
-    
-    }//GEN-LAST:event_entrarActionPerformed
-
-    private void contraceñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraceñaActionPerformed
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_contraceñaActionPerformed
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RBMasterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RBMasterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_RBMasterActionPerformed
+
+    private void RBJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RBJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RBJugadorActionPerformed
+
+    private void BtnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnEntrarMouseClicked
+        String User="";
+
+        User= txtUsuario.getText();
+        String pass= new String(Password.getPassword());
+         if (RBJugador.isSelected()){
+//        cons.IngresoJugador(user, password);
+    }
+    if(RBMaster.isSelected()){
+        
+}
+        
+        
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnEntrarMouseClicked
+
+    private void BtnRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnRegistrarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnRegistrarMouseClicked
+
+    private void BtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarActionPerformed
+
+RegistroGUI cons = new RegistroGUI();
+        cons.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_BtnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,16 +219,14 @@ public class IngresoGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Usuario;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JTextField contraceña;
-    private javax.swing.JButton entrar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JRadioButton jugador;
-    private javax.swing.JRadioButton master;
+    private javax.swing.JButton BtnEntrar;
+    private javax.swing.JButton BtnRegistrar;
+    private javax.swing.JLabel LblUsuario;
+    private javax.swing.JPasswordField Password;
+    private javax.swing.JRadioButton RBJugador;
+    private javax.swing.JRadioButton RBMaster;
+    private javax.swing.JLabel fondo;
+    private javax.swing.JLabel lblContraseña;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
