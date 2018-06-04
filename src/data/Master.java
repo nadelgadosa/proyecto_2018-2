@@ -57,7 +57,9 @@ public class Master extends Usuario {
         try{
             System.out.println("entra al try catch");
             final Path archivoSer = new File("data\\Master\\"+user+".ser").toPath();
+            System.out.println("crea el final path");
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
+            System.out.println("crea el inputStream");
             master = (Master)leerUsuario.readObject();
             leerUsuario.close();
             System.out.println("lee el usuario   "+ master.getClave());
@@ -82,7 +84,7 @@ public class Master extends Usuario {
             aux = false;
         }
         
-        
+        System.out.println("retorna el booleano");
         return aux;
     }
     
@@ -113,9 +115,13 @@ public class Master extends Usuario {
     }
     
     public Juego[] listaDeObjetosJuegos (String [] nombresDeArchivos){
-        int i = nombresDeArchivos.length;
-        Juego[] objetos = new Juego[i];
-        for (int j = 0; j <= i ; j++) {
+        System.out.println("entra al metodo lista de objetos juegos ");
+        
+        
+        Juego[] objetos = new Juego[3];
+        objetos = null;
+        for (int j = 0; j <= 3 ; j++) {
+            System.out.println("entra al for del metodo");
             try{
             
             final Path archivoSer = new File("data\\Master\\"+nombresDeArchivos[j]+".ser").toPath();
@@ -124,9 +130,11 @@ public class Master extends Usuario {
             leerUsuario.close();
             
         }catch(Exception e){
+            System.out.println("no lee los .ser, por que no existen");
                 System.out.println(e);   
         }
         }
+        System.out.println("retorna el arreglo de objetos, asi este vacio");
         return objetos ;
     }
     

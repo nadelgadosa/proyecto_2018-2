@@ -122,10 +122,11 @@ public class Jugador extends Usuario {
             leerUsuario.close();
                 System.out.println("lee objetos personaje(los .ser)");
         }catch(Exception e){
-                System.out.println("no lee los .ser");
+                System.out.println("no lee los .ser, por que no existen");
                 System.out.println(e);
                 
         }
+            
         }
         System.out.println("retorna el arreglo de objetos, asi este vacio");
         return objetos ;

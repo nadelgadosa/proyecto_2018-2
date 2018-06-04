@@ -45,9 +45,6 @@ public class IngresoYRegistro {
         
         jugadorActual.setPersonaje(objetos);
         
-        
-       
-        
         jugador.setVisible(true);
         jugador.setNombreDeJugador(usuario);
         
@@ -75,11 +72,12 @@ public class IngresoYRegistro {
     ingresar = MasterActual.verificarIngreso(MasterActual, contraseña);
     if(ingresar){
         Juegos = MasterActual.listaDeJuegos(usuario);
-        for (int i = 0; i < Juegos.length; i++) {
-            System.out.println("entra al for de busines");
+        System.out.println("sigue corriendo");
+        
             objetos = MasterActual.listaDeObjetosJuegos(Juegos);
-            MasterActual.setJuego(objetos[i], i);
-        }
+            System.out.println("lee la los .ser de los objetos juego");
+            MasterActual.setJuego(objetos);
+            System.out.println("asigna los objetos tipo juego a master");
         Master.setVisible(true);
         Master.setNombreMaster(MasterActual.getNombreUsuario());
         Master.setJuego1(MasterActual.descripcionDeJuego(objetos, 0));

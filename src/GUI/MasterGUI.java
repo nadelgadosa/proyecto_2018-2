@@ -6,6 +6,7 @@
 package GUI;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -31,21 +32,15 @@ public class MasterGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        nombreMaster = new javax.swing.JTextField();
         juego1 = new javax.swing.JButton();
         juego2 = new javax.swing.JButton();
         juego3 = new javax.swing.JButton();
         juego4 = new javax.swing.JButton();
+        nombreMaster = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Master");
-
-        nombreMaster.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreMasterActionPerformed(evt);
-            }
-        });
 
         juego1.setText("jButton1");
         juego1.addActionListener(new java.awt.event.ActionListener() {
@@ -69,8 +64,8 @@ public class MasterGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nombreMaster, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nombreMaster)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(juego1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -87,7 +82,7 @@ public class MasterGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(nombreMaster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombreMaster))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(juego1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 683, Short.MAX_VALUE)
@@ -99,11 +94,6 @@ public class MasterGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void nombreMasterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreMasterActionPerformed
-      
-        nombreMaster.setText("nombre de usuario que recibe de ingreso");
-    }//GEN-LAST:event_nombreMasterActionPerformed
 
     private void juego1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_juego1ActionPerformed
         // TODO add your handling code here:
@@ -178,9 +168,11 @@ public class MasterGUI extends javax.swing.JFrame {
         juego4.setText(text);
     }
 
-    public JTextField getNombreMaster() {
+    public JLabel getNombreMaster() {
         return nombreMaster;
     }
+
+    
 
     public void setNombreMaster(String text) {
         nombreMaster.setText(text);
@@ -197,6 +189,6 @@ public class MasterGUI extends javax.swing.JFrame {
     private javax.swing.JButton juego2;
     private javax.swing.JButton juego3;
     private javax.swing.JButton juego4;
-    private javax.swing.JTextField nombreMaster;
+    private javax.swing.JLabel nombreMaster;
     // End of variables declaration//GEN-END:variables
 }
