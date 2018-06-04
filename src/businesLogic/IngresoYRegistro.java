@@ -84,7 +84,7 @@ public class IngresoYRegistro {
         Master.setJuego2(MasterActual.descripcionDeJuego(objetos, 1));
         Master.setJuego3(MasterActual.descripcionDeJuego(objetos, 2));
         Master.setJuego4(MasterActual.descripcionDeJuego(objetos, 3));
-        
+        Master.setConstructor(objetos);
     }else{
      cons.setBtnEntrar();
     }

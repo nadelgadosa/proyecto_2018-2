@@ -53,7 +53,7 @@ public class Jugador extends Usuario {
             System.out.println("completa la asignacion de usuario");
             
         }catch(Exception e){
-            System.out.println("se sale del try catch por: "+e);
+            System.out.println("se sale del try catch por: " +e);
         }
         return jugador;
     }
@@ -155,6 +155,7 @@ public class Jugador extends Usuario {
             System.out.println("se creo el .txt");
         } catch (IOException ex) {
             Logger.getLogger(Jugador.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("el error es:" + ex);
         } 
         
          

@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import businesLogic.Juegos;
+import data.Juego;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -14,7 +16,7 @@ import javax.swing.JTextField;
  * @author Usuario
  */
 public class MasterGUI extends javax.swing.JFrame {
-
+Juego[] constructor= new Juego[3]; 
     /**
      * Creates new form JugadorGUI
      */
@@ -42,18 +44,29 @@ public class MasterGUI extends javax.swing.JFrame {
 
         jLabel1.setText("Master");
 
-        juego1.setText("jButton1");
         juego1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 juego1ActionPerformed(evt);
             }
         });
 
-        juego2.setText("jButton2");
+        juego2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                juego2ActionPerformed(evt);
+            }
+        });
 
-        juego3.setText("jButton3");
+        juego3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                juego3ActionPerformed(evt);
+            }
+        });
 
-        juego4.setText("jButton4");
+        juego4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                juego4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -64,7 +77,7 @@ public class MasterGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(46, 46, 46)
                         .addComponent(nombreMaster)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -96,8 +109,49 @@ public class MasterGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void juego1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_juego1ActionPerformed
-        // TODO add your handling code here:
+        
+        Juegos cons = new Juegos();
+        String user =  nombreMaster.getText();
+        
+        if(juego1.getText().equals("new")){
+            cons.CrearJuego();
+        }else{
+            cons.entrarEnJuego(0,user,constructor);
+        }
+        
+        
+        
     }//GEN-LAST:event_juego1ActionPerformed
+
+    private void juego2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_juego2ActionPerformed
+        Juegos cons = new Juegos();
+        String user =  nombreMaster.getText();
+        if(juego1.getText().equals("new")){
+            cons.CrearJuego();
+        }else{
+            cons.entrarEnJuego(1,user,constructor);
+        }
+    }//GEN-LAST:event_juego2ActionPerformed
+
+    private void juego3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_juego3ActionPerformed
+        Juegos cons = new Juegos();
+        String user =  nombreMaster.getText();
+        if(juego1.getText().equals("new")){
+            cons.CrearJuego();
+        }else{
+            cons.entrarEnJuego(2,user,constructor);
+        }
+    }//GEN-LAST:event_juego3ActionPerformed
+
+    private void juego4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_juego4ActionPerformed
+        Juegos cons = new Juegos();
+        String user =  nombreMaster.getText();
+        if(juego1.getText().equals("new")){
+            cons.CrearJuego();
+        }else{
+            cons.entrarEnJuego(3,user,constructor);
+        }
+    }//GEN-LAST:event_juego4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,6 +232,16 @@ public class MasterGUI extends javax.swing.JFrame {
         nombreMaster.setText(text);
     }
 
+    public Juego[] getConstructor() {
+        return constructor;
+    }
+
+    public void setConstructor(Juego[] constructor) {
+        this.constructor = constructor;
+    }
+
+    
+    
  
 
    

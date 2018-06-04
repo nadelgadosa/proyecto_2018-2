@@ -5,6 +5,10 @@
  */
 package GUI;
 import data.Juego;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JTextArea;
 /**
  *
  * @author beto arias
@@ -28,15 +32,15 @@ public class Game extends javax.swing.JFrame {
     private void initComponents() {
 
         jSeparator1 = new javax.swing.JSeparator();
-        TF_Name_Game = new javax.swing.JTextField();
-        TF_IDJugador = new javax.swing.JTextField();
+        historia = new javax.swing.JTextField();
+        monstruos = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         TxtA_Historia = new javax.swing.JTextArea();
         bt_EDIT1 = new javax.swing.JButton();
         Btn_Add = new javax.swing.JButton();
         Btn_See = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        TF_Jugador = new javax.swing.JTextField();
+        vitacora = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         TxtA_Vitacora = new javax.swing.JTextArea();
         Btn_Vitacora = new javax.swing.JButton();
@@ -47,29 +51,35 @@ public class Game extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jugador1 = new javax.swing.JButton();
+        jugador2 = new javax.swing.JButton();
+        jugador3 = new javax.swing.JButton();
+        jugador4 = new javax.swing.JButton();
+        jugador5 = new javax.swing.JButton();
+        jugador6 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        monstruosList = new javax.swing.JList<>();
+        nombreUsuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        numeroJugadores = new javax.swing.JLabel();
+        nombreJuego = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        itemsList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        TF_Name_Game.setEnabled(false);
-        TF_Name_Game.addActionListener(new java.awt.event.ActionListener() {
+        historia.setText("historia:");
+        historia.setEnabled(false);
+        historia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TF_Name_GameActionPerformed(evt);
+                historiaActionPerformed(evt);
             }
         });
 
-        TF_IDJugador.setEnabled(false);
+        monstruos.setText("monstruos:");
+        monstruos.setEnabled(false);
 
         TxtA_Historia.setColumns(20);
         TxtA_Historia.setRows(5);
@@ -83,7 +93,8 @@ public class Game extends javax.swing.JFrame {
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        TF_Jugador.setEnabled(false);
+        vitacora.setText("vitacora:");
+        vitacora.setEnabled(false);
 
         TxtA_Vitacora.setColumns(20);
         TxtA_Vitacora.setRows(5);
@@ -103,28 +114,33 @@ public class Game extends javax.swing.JFrame {
 
         jButton4.setText("NPC 4");
 
-        jButton5.setText("jButton5");
+        jugador1.setText("jugador1");
 
-        jButton6.setText("jButton6");
+        jugador2.setText("jugador2");
 
-        jButton7.setText("jButton7");
+        jugador3.setText("jugador3");
 
-        jButton8.setText("jButton8");
+        jugador4.setText("jugador4");
 
-        jButton9.setText("jButton9");
+        jugador5.setText("jugador5");
 
-        jButton10.setText("jButton10");
+        jugador6.setText("jugador6");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane4.setViewportView(jTextArea1);
+        monstruosList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "monstruo 1", "monstruo 2", "monstruo 3", "monstruo 4", "monstruo 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane5.setViewportView(monstruosList);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        jLabel2.setText("numero de jugadores:");
+
+        itemsList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane5.setViewportView(jList1);
+        jScrollPane1.setViewportView(itemsList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,7 +171,7 @@ public class Game extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(22, 22, 22)
-                                        .addComponent(TF_Name_Game, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(historia, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(19, 19, 19)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,10 +190,10 @@ public class Game extends javax.swing.JFrame {
                                             .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(18, 18, 18)
                                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(TF_IDJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(monstruos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TF_Jugador, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(vitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(55, 55, 55)
@@ -187,23 +203,38 @@ public class Game extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton5)
-                                .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(jButton9)
-                    .addComponent(jButton10)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                                .addComponent(jugador1)
+                                .addComponent(jugador2, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jugador3, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(jugador4, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jugador5)
+                    .addComponent(jugador6)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(42, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(nombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(numeroJugadores, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nombreJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(numeroJugadores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nombreUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nombreJuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TF_Name_Game, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TF_IDJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TF_Jugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(historia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(monstruos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vitacora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
@@ -231,19 +262,20 @@ public class Game extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton5)
+                                .addComponent(jugador1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton6)
+                                .addComponent(jugador2)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton7)
+                                .addComponent(jugador3)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton8)
+                                .addComponent(jugador4)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton9)
+                                .addComponent(jugador5)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton10)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane4))
+                                .addComponent(jugador6)
+                                .addGap(39, 39, 39)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -255,15 +287,15 @@ public class Game extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(Btn_Maps))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGap(70, 70, 70))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TF_Name_GameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF_Name_GameActionPerformed
+    private void historiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TF_Name_GameActionPerformed
+    }//GEN-LAST:event_historiaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,31 +337,149 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JButton Btn_Maps;
     private javax.swing.JButton Btn_See;
     private javax.swing.JButton Btn_Vitacora;
-    private javax.swing.JTextField TF_IDJugador;
-    private javax.swing.JTextField TF_Jugador;
-    private javax.swing.JTextField TF_Name_Game;
     private javax.swing.JTextArea TxtA_Historia;
     private javax.swing.JTextArea TxtA_Vitacora;
     private javax.swing.JButton bt_EDIT1;
+    private javax.swing.JTextField historia;
+    private javax.swing.JList<String> itemsList;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton jugador1;
+    private javax.swing.JButton jugador2;
+    private javax.swing.JButton jugador3;
+    private javax.swing.JButton jugador4;
+    private javax.swing.JButton jugador5;
+    private javax.swing.JButton jugador6;
+    private javax.swing.JTextField monstruos;
+    private javax.swing.JList<String> monstruosList;
+    private javax.swing.JLabel nombreJuego;
+    private javax.swing.JLabel nombreUsuario;
+    private javax.swing.JLabel numeroJugadores;
+    private javax.swing.JTextField vitacora;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getNombreJuego() {
+        return nombreJuego;
+    }
+
+    public void setNombreJuego(String texto) {
+        nombreJuego.setText(texto);
+    }
+
+    public JLabel getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String texto) {
+        nombreUsuario.setText(texto);
+    }
+
+    public JLabel getNumeroJugadores() {
+        return numeroJugadores;
+    }
+
+    public void setNumeroJugadores(String texto) {
+        numeroJugadores.setText(texto);
+    }
+
+    
+    
+    public JTextArea getTxtA_Historia() {
+        return TxtA_Historia;
+    }
+
+    public void setTxtA_Historia(String texto) {
+        TxtA_Historia.setText(texto);
+    }
+
+    public JTextArea getTxtA_Vitacora() {
+        return TxtA_Vitacora;
+    }
+
+    public void setTxtA_Vitacora(String texto) {
+        TxtA_Vitacora.setText(texto);
+    }
+
+    public JList<String> getItemsList() {
+        return monstruosList;
+    }
+
+    public void setItemsList(String [] texto) {
+        
+        monstruosList.setListData(texto);
+    }
+
+    public JList<String> getMonstruosList() {
+        return monstruosList;
+    }
+
+    public void setMonstruosList(String [] texto) {
+         monstruosList.setListData(texto);
+    }
+
+    
+    
+    
+    public JButton getJugador1() {
+        return jugador1;
+    }
+
+    public void setJugador1(String texto) {
+        jugador1.setText(texto);;
+    }
+
+    public JButton getJugador2() {
+        return jugador2;
+    }
+
+    public void setJugador2(String texto) {
+        jugador2.setText(texto);
+    }
+
+    public JButton getJugador3() {
+        return jugador3;
+    }
+
+    public void setJugador3(String texto) {
+       jugador3.setText(texto);
+    }
+
+    public JButton getJugador4() {
+        return jugador4;
+    }
+
+    public void setJugador4(String texto) {
+        jugador4.setText(texto);
+    }
+
+    public JButton getJugador5() {
+        return jugador5;
+    }
+
+    public void setJugador5(String texto) {
+        jugador5.setText(texto);
+    }
+
+    public JButton getJugador6() {
+        return jugador6;
+    }
+
+    public void setJugador6(String texto) {
+        jugador6.setText(texto);
+    }
+
+    
+    
+    
 }
