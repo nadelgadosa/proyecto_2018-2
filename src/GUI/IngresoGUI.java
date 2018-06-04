@@ -8,12 +8,13 @@ import javax.swing.JButton;
  * @author beto arias
  */
 public class IngresoGUI extends javax.swing.JFrame {
-
+IngresoGUI l;
     /**
      * Creates new form IngresoGUI
      */
     public IngresoGUI() {
         initComponents();
+        l=this;
     }
 
     /**
@@ -187,8 +188,9 @@ public class IngresoGUI extends javax.swing.JFrame {
 
     private void BtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarActionPerformed
 
-RegistroGUI cons = new RegistroGUI();
-        cons.setVisible(true);// TODO add your handling code here:
+RegistroGUI r=new RegistroGUI(l);
+				r.setVisible(true);
+				l.setVisible(false);
     }//GEN-LAST:event_BtnRegistrarActionPerformed
 
     private void BtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEntrarActionPerformed
