@@ -6,18 +6,30 @@
 package GUI;
 
 import businesLogic.IngresoYRegistro;
+import java.awt.GridBagLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 /**
  *
  * @author beto arias
  */
 public class RegistroGUI extends javax.swing.JFrame {
-
+private JPanel contentPane;
     /**
      * Creates new form RegistroGUI
      */
-    public RegistroGUI() {
-        initComponents();
+     
+        IngresoGUI lP;
+	//VEntana de Registro
+	RegistroGUI r;
+    public RegistroGUI(IngresoGUI l) {
+       initComponents();
+       lP=l;
+       r=this;
+       
+       
     }
 
     /**
@@ -28,7 +40,6 @@ public class RegistroGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         LabelContraseña = new javax.swing.JLabel();
         jLabelUsuario = new javax.swing.JLabel();
@@ -38,69 +49,25 @@ public class RegistroGUI extends javax.swing.JFrame {
         jRadioMaster = new javax.swing.JRadioButton();
         BtnCrear = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        BtnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         LabelContraseña.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         LabelContraseña.setText("Contraseña");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 49, 0, 0);
-        getContentPane().add(LabelContraseña, gridBagConstraints);
 
         jLabelUsuario.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelUsuario.setText("Usuario");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 49, 0, 0);
-        getContentPane().add(jLabelUsuario, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 134;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 18, 0, 45);
-        getContentPane().add(TextUsuario, gridBagConstraints);
 
         TextPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextPasswordActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 134;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(28, 18, 0, 45);
-        getContentPane().add(TextPassword, gridBagConstraints);
 
         jRadioJugador.setText("Jugador");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 18, 0, 45);
-        getContentPane().add(jRadioJugador, gridBagConstraints);
 
         jRadioMaster.setText("Master");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 16, 0, 0);
-        getContentPane().add(jRadioMaster, gridBagConstraints);
 
         BtnCrear.setText("CREAR");
         BtnCrear.addActionListener(new java.awt.event.ActionListener() {
@@ -108,22 +75,83 @@ public class RegistroGUI extends javax.swing.JFrame {
                 BtnCrearActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 1, 0, 0);
-        getContentPane().add(BtnCrear, gridBagConstraints);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/dnd.png"))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(19, 0, 0, 0);
-        getContentPane().add(jLabel2, gridBagConstraints);
+
+        BtnCancelar.setText("CANCELAR");
+        BtnCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnCancelarMouseClicked(evt);
+            }
+        });
+        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCancelarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabelUsuario)
+                .addGap(62, 62, 62)
+                .addComponent(TextUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(LabelContraseña))
+                    .addComponent(jLabel2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(TextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jRadioMaster)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioJugador)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(BtnCrear)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BtnCancelar)
+                        .addContainerGap(21, Short.MAX_VALUE))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelUsuario)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(TextUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(LabelContraseña)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(TextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioMaster)
+                            .addComponent(jRadioJugador))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BtnCrear)
+                            .addComponent(BtnCancelar))
+                        .addGap(39, 39, 39))))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -137,6 +165,17 @@ public class RegistroGUI extends javax.swing.JFrame {
        String usuario, contraseña;
        usuario = TextUsuario.getText();
        contraseña = TextPassword.getText();
+       
+       
+       //validaciones
+       if((usuario.length()<=0)||(contraseña.length()<=0)){
+		            JOptionPane.showMessageDialog(contentPane,
+			                "Falta por rellenar algun campo del formulario",
+			                "ERROR",
+			                JOptionPane.ERROR_MESSAGE);
+				}
+       
+       
         if (jRadioJugador.isSelected()){
            constructor.crearObjetoJugador(usuario, contraseña);
        }
@@ -144,6 +183,17 @@ public class RegistroGUI extends javax.swing.JFrame {
             constructor.crearObjetoMaster(usuario, contraseña);
         }
     }//GEN-LAST:event_BtnCrearActionPerformed
+
+    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+        // oculta y  muestra
+    
+                                lP.setVisible(true);
+				r.setVisible(false);
+    }//GEN-LAST:event_BtnCancelarActionPerformed
+
+    private void BtnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnCancelarMouseClicked
+ 
+    }//GEN-LAST:event_BtnCancelarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -175,12 +225,13 @@ public class RegistroGUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistroGUI().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnCrear;
     private javax.swing.JLabel LabelContraseña;
     private javax.swing.JTextField TextPassword;
