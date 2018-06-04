@@ -188,7 +188,7 @@ IngresoGUI l;
 
     private void BtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarActionPerformed
 
-RegistroGUI r=new RegistroGUI(l);
+RegistroGUI  r= new RegistroGUI(l);
 				r.setVisible(true);
 				l.setVisible(false);
     }//GEN-LAST:event_BtnRegistrarActionPerformed
