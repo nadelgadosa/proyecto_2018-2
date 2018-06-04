@@ -6,6 +6,7 @@
 package GUI;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -31,34 +32,21 @@ public class JugadorGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        nombreJugador = new javax.swing.JTextField();
         personaje1 = new javax.swing.JButton();
         personaje2 = new javax.swing.JButton();
         personaje3 = new javax.swing.JButton();
         personaje4 = new javax.swing.JButton();
+        nombreDeJugador = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Jugador: ");
 
-        nombreJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreJugadorActionPerformed(evt);
-            }
-        });
-
-        personaje1.setText("jButton1");
         personaje1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personaje1ActionPerformed(evt);
             }
         });
-
-        personaje2.setText("jButton2");
-
-        personaje3.setText("jButton3");
-
-        personaje4.setText("jButton4");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,8 +57,8 @@ public class JugadorGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nombreDeJugador)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(personaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -87,7 +75,7 @@ public class JugadorGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(nombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombreDeJugador))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(personaje1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 683, Short.MAX_VALUE)
@@ -99,11 +87,6 @@ public class JugadorGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void nombreJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreJugadorActionPerformed
-      
-        nombreJugador.setText("nombre de usuario que recibe de ingreso");
-    }//GEN-LAST:event_nombreJugadorActionPerformed
 
     private void personaje1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personaje1ActionPerformed
         // TODO add your handling code here:
@@ -157,16 +140,18 @@ public class JugadorGUI extends javax.swing.JFrame {
         return personaje2;
     }
 
-    public JTextField getNombreJugador() {
-        return nombreJugador;
+    public JLabel getNombreDeJugador() {
+        return nombreDeJugador;
     }
 
-    public void setNombreJugador(String texto) {
-        nombreJugador.setText(texto);
+    public void setNombreDeJugador(String texto) {
+        nombreDeJugador.setText(texto); 
     }
+
+    
 
     public void setPersonaje2(String texto) {
-        personaje1.setText(texto);
+        personaje2.setText(texto);
     }
 
     public JButton getPersonaje3() {
@@ -174,7 +159,7 @@ public class JugadorGUI extends javax.swing.JFrame {
     }
 
     public void setPersonaje3(String texto) {
-        personaje1.setText(texto);
+        personaje3.setText(texto);
     }
 
     public JButton getPersonaje4() {
@@ -182,12 +167,12 @@ public class JugadorGUI extends javax.swing.JFrame {
     }
 
     public void setPersonaje4(String texto) {
-        personaje1.setText(texto);
+        personaje4.setText(texto);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField nombreJugador;
+    private javax.swing.JLabel nombreDeJugador;
     private javax.swing.JButton personaje1;
     private javax.swing.JButton personaje2;
     private javax.swing.JButton personaje3;

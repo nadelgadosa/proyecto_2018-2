@@ -56,7 +56,7 @@ public class Master extends Usuario {
         Master master = new Master();
         try{
             System.out.println("entra al try catch");
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Master\\"+user+".ser").toPath();
+            final Path archivoSer = new File("data\\Master\\"+user+".ser").toPath();
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             master = (Master)leerUsuario.readObject();
             leerUsuario.close();
@@ -74,7 +74,7 @@ public class Master extends Usuario {
         boolean aux;
         String a=master.getClave();
         System.out.println(master.getClave()+"-"+clave);
-        if(clave == a){
+        if(clave.equals(a)){
             System.out.println("clave correcta");
             aux = true;
         }else{
@@ -90,15 +90,21 @@ public class Master extends Usuario {
         String [] juegos = null;
         int i=0;
          try {
-            File inFile = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Master\\"+user+".txt");
+            File inFile = new File("data\\Master\\"+user+".txt");
             FileReader fR = new FileReader(inFile);
-            Scanner in = new Scanner(inFile);      
-            while(in.hasNext()){
+            Scanner in = new Scanner(inFile);  
+            
+            
+            if(in.hasNext()){
+                while(in.hasNext()){
                  
-                 juegos [i] = in.next();
-                 i++;
+                    juegos [i] = in.next();
+                    i++;
                  
-            }
+                }    
+             }
+            
+            
             in.close();           
         } catch (FileNotFoundException ex) {
              System.out.println(ex);
@@ -112,7 +118,7 @@ public class Master extends Usuario {
         for (int j = 0; j <= i ; j++) {
             try{
             
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Master\\"+nombresDeArchivos[j]+".ser").toPath();
+            final Path archivoSer = new File("data\\Master\\"+nombresDeArchivos[j]+".ser").toPath();
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             objetos [j] = (Juego)leerUsuario.readObject();
             leerUsuario.close();
@@ -124,20 +130,17 @@ public class Master extends Usuario {
         return objetos ;
     }
     
-    public String Juego(Juego [] juego, int i){
-        if(juego[i]==null){
-          return "new";  
-        }else{
-       return juego[i].toString(); 
-    }    
-    } 
+    
     
     public String descripcionDeJuego(Juego [] juego, int i){
-        if(juego[i]==null){
-          return "new";  
-        }else{
-       return juego[i].toString(); 
-    }
+       System.out.println("entra al metodo descripcion de Juego");
+        try{  
+            return juego[i].toString(); 
+        }catch(Exception e){
+            
+            System.out.println(e);
+            return "new";
+        }
         
         
         
@@ -192,4 +195,9 @@ public class Master extends Usuario {
     public void setJuego(Juego juego, int numeroDeJuego) {
         this.juego[numeroDeJuego] = juego;
     }
-  }
+
+    public void setJuego(Juego[] juego) {
+        this.juego = juego;
+    }
+  
+}

@@ -42,17 +42,18 @@ public class Jugador extends Usuario {
     public Jugador BuscarUsuario(String user){
         System.out.println("entra al metodo buscar usuario en data");
         Jugador jugador = new Jugador();
-        final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Jugador\\"+user+".ser").toPath();
+        final Path archivoSer = new File("data\\Jugador\\"+user+".ser").toPath();
         try{
             
-           
+            System.out.println("entra al try catch");
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
+            
             jugador = (Jugador)leerUsuario.readObject();
             leerUsuario.close();
-            
+            System.out.println("completa la asignacion de usuario");
             
         }catch(Exception e){
-            System.out.println("no entra al try chatch de buscar usuario");
+            System.out.println("se sale del try catch por: "+e);
         }
         return jugador;
     }
@@ -60,8 +61,10 @@ public class Jugador extends Usuario {
     public boolean verificarIngreso(Jugador jugador, String clave){
         System.out.println("entra al metodo verificar ingreso");
         boolean aux;
-        System.out.println(jugador.getClave());
-        if(jugador.getClave()== clave){
+        clave = (String)clave;
+        String key = (String)jugador.getClave();
+        System.out.println(key+" - "+clave);
+        if(key.equals(clave)){
             System.out.println("clave correcta");
             aux = true;
         }else{
@@ -78,51 +81,67 @@ public class Jugador extends Usuario {
         String [] personajes = null;
         int i=0;
          try {
-            File inFile = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Jugador\\"+user+".txt");
+             
+            File inFile = new File("data\\Jugador\\"+user+".txt");
             FileReader fR = new FileReader(inFile);
-            Scanner in = new Scanner(inFile);      
-            while(in.hasNext()){
+             System.out.println("entra al try catch y crea el file y el filereader");
+            Scanner in = new Scanner(inFile);
+             System.out.println("crea el scanner");
+             if(in.hasNext()){
+                while(in.hasNext()){
                  
-                 personajes [i] = in.next();
-                 i++;
+                    personajes [i] = in.next();
+                    i++;
                  
-            }
+                }    
+             }
+            
             in.close(); 
              System.out.println("lee la lista de los personajes (metodo de data)");
         } catch (FileNotFoundException ex) {
              System.out.println(ex);
         } 
+        System.out.println("retorna la lista, asi sea vacia");
         return personajes;
+        
     }
     
     public Personaje[] listaDeObjetosPersonaje (String [] nombresDeArchivos){
         System.out.println("entra al metodo para leer los objetos personaje de la data, metodo de data");
-        int i = nombresDeArchivos.length;
+        
         Personaje[] objetos = new Personaje[3];
-        for (int j = 0; j <= i ; j++) {
+        objetos= null;
+        for (int j = 0; j <= 3 ; j++) {
+            System.out.println("entra al for del metodo");
             try{
             
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyectoRol\\data\\Jugador\\"+nombresDeArchivos[j]+".ser").toPath();
+            final Path archivoSer = new File("data\\Jugador\\"+nombresDeArchivos[j]+".ser").toPath();
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
+            System.out.println("crea lo necesario para leer los objetos(final path, y objectInputStream)");
             objetos [j] = (Personaje)leerUsuario.readObject();
             leerUsuario.close();
                 System.out.println("lee objetos personaje(los .ser)");
         }catch(Exception e){
                 System.out.println("no lee los .ser");
-                System.out.println(e);   
+                System.out.println(e);
+                
         }
         }
+        System.out.println("retorna el arreglo de objetos, asi este vacio");
         return objetos ;
     }
     
     public String descripcionDePersonaje(Personaje [] personaje, int i){
-        if(personaje[i]==null){
-          return "new";  
-        }else{
-       return personaje[i].toString(); 
-    }
         
-        
+        System.out.println("entra al metodo descripcion de personaje");
+        try{  
+            return personaje[i].toString(); 
+        }catch(Exception e){
+            
+            System.out.println(e);
+            return "new";
+        }
+       
         
     }
     
@@ -172,6 +191,12 @@ public class Jugador extends Usuario {
     }
     public void setPersonaje(Personaje personaje, int numeroDePersonaje) {
         this.personaje[numeroDePersonaje] = personaje;
+        
+    }
+
+    public void setPersonaje(Personaje[] personaje) {
+        this.personaje = personaje;
     }
    
+    
 }

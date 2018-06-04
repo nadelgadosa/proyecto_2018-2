@@ -40,13 +40,17 @@ public class IngresoYRegistro {
     ingresar = jugadorActual.verificarIngreso(jugadorActual, contraseña);
     if(ingresar){
         personajes = jugadorActual.listaDePersonajes(usuario);
-        for (int i = 0; i < personajes.length; i++) {
-            System.out.println("entra al for de busines");
-            objetos = jugadorActual.listaDeObjetosPersonaje(personajes);
-            jugadorActual.setPersonaje(objetos[i], i);
-        }
+        System.out.println("sigue corriendo");
+        objetos = jugadorActual.listaDeObjetosPersonaje(personajes);
+        
+        jugadorActual.setPersonaje(objetos);
+        
+        
+       
+        
         jugador.setVisible(true);
-        jugador.setNombreJugador(jugadorActual.getNombreUsuario());
+        jugador.setNombreDeJugador(usuario);
+        
         jugador.setPersonaje1(jugadorActual.descripcionDePersonaje(objetos, 0));
         jugador.setPersonaje2(jugadorActual.descripcionDePersonaje(objetos, 1));
         jugador.setPersonaje3(jugadorActual.descripcionDePersonaje(objetos, 2));
@@ -91,12 +95,12 @@ public class IngresoYRegistro {
 
     public void crearObjetoJugador(String usuario, String contraseña){
         Jugador jugadorACrear = new Jugador();
-        jugadorACrear.crearObjetoJugador(usuario, contraseña,"C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Jugador\\"+usuario);
+        jugadorACrear.crearObjetoJugador(usuario, contraseña,"data\\Jugador\\"+usuario);
     }
     
     public void crearObjetoMaster(String usuario, String contraseña){
         Master MasterACrear = new Master();
-        MasterACrear.crearObjetoMaster(usuario, contraseña,"C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Master\\"+usuario);
+        MasterACrear.crearObjetoMaster(usuario, contraseña,"data\\Master\\"+usuario);
     }
 }
  
