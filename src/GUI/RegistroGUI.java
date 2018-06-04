@@ -45,11 +45,10 @@ private JPanel contentPane;
         jLabelUsuario = new javax.swing.JLabel();
         TextUsuario = new javax.swing.JTextField();
         TextPassword = new javax.swing.JTextField();
-        jRadioJugador = new javax.swing.JRadioButton();
-        jRadioMaster = new javax.swing.JRadioButton();
         BtnCrear = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         BtnCancelar = new javax.swing.JButton();
+        CBTipoPerfil = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,10 +63,6 @@ private JPanel contentPane;
                 TextPasswordActionPerformed(evt);
             }
         });
-
-        jRadioJugador.setText("Jugador");
-
-        jRadioMaster.setText("Master");
 
         BtnCrear.setText("CREAR");
         BtnCrear.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +85,13 @@ private JPanel contentPane;
             }
         });
 
+        CBTipoPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jugador", "Master" }));
+        CBTipoPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBTipoPerfilActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,22 +109,17 @@ private JPanel contentPane;
                     .addComponent(jLabel2))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(TextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioMaster)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioJugador)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(BtnCrear)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BtnCancelar)
-                        .addContainerGap(21, Short.MAX_VALUE))))
+                        .addContainerGap(21, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TextPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(CBTipoPerfil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,9 +140,7 @@ private JPanel contentPane;
                         .addGap(10, 10, 10)
                         .addComponent(TextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioMaster)
-                            .addComponent(jRadioJugador))
+                        .addComponent(CBTipoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BtnCrear)
@@ -175,13 +170,18 @@ private JPanel contentPane;
 			                JOptionPane.ERROR_MESSAGE);
 				}
        
-       
-        if (jRadioJugador.isSelected()){
+       String itemSeleecionado = (String)CBTipoPerfil.getSelectedItem();
+       if ("Master".equals(itemSeleecionado)){
+            constructor.crearObjetoMaster(usuario, contraseña);
+            
+		            
+        } 
+       else
+           {
            constructor.crearObjetoJugador(usuario, contraseña);
        }
-        if (jRadioMaster.isSelected()){
-            constructor.crearObjetoMaster(usuario, contraseña);
-        }
+       
+        
     }//GEN-LAST:event_BtnCrearActionPerformed
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
@@ -194,6 +194,12 @@ private JPanel contentPane;
     private void BtnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnCancelarMouseClicked
  
     }//GEN-LAST:event_BtnCancelarMouseClicked
+
+    private void CBTipoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBTipoPerfilActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_CBTipoPerfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,12 +239,11 @@ private JPanel contentPane;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnCrear;
+    private javax.swing.JComboBox<String> CBTipoPerfil;
     private javax.swing.JLabel LabelContraseña;
     private javax.swing.JTextField TextPassword;
     private javax.swing.JTextField TextUsuario;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelUsuario;
-    private javax.swing.JRadioButton jRadioJugador;
-    private javax.swing.JRadioButton jRadioMaster;
     // End of variables declaration//GEN-END:variables
 }
