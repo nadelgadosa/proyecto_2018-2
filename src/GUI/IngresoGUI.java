@@ -3,6 +3,10 @@ import businesLogic.IngresoYRegistro;
 import data.Jugador;
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 /**
  *
  * @author beto arias
@@ -12,6 +16,7 @@ IngresoGUI l;
     /**
      * Creates new form IngresoGUI
      */
+    
     public IngresoGUI() {
         initComponents();
         l=this;
@@ -30,11 +35,10 @@ IngresoGUI l;
         LblUsuario = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        Password = new javax.swing.JPasswordField();
         BtnEntrar = new javax.swing.JButton();
         BtnRegistrar = new javax.swing.JButton();
-        RBMaster = new javax.swing.JRadioButton();
-        RBJugador = new javax.swing.JRadioButton();
+        CB_ingreso = new javax.swing.JComboBox<>();
+        textPass = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -80,23 +84,7 @@ IngresoGUI l;
             }
         });
 
-        RBMaster.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        RBMaster.setForeground(new java.awt.Color(255, 255, 255));
-        RBMaster.setText("Master");
-        RBMaster.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RBMasterActionPerformed(evt);
-            }
-        });
-
-        RBJugador.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        RBJugador.setForeground(new java.awt.Color(255, 255, 255));
-        RBJugador.setText("Jugador");
-        RBJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RBJugadorActionPerformed(evt);
-            }
-        });
+        CB_ingreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jugador", "Master" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,18 +99,15 @@ IngresoGUI l;
                         .addComponent(LblUsuario)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(BtnRegistrar))
+                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Password)
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RBMaster)
-                            .addComponent(RBJugador)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(BtnRegistrar)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                            .addComponent(CB_ingreso, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                            .addComponent(textPass))))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -132,20 +117,20 @@ IngresoGUI l;
                 .addContainerGap(115, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblUsuario)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RBMaster))
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblContraseña)
-                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RBJugador))
-                .addGap(40, 40, 40)
+                    .addComponent(textPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addComponent(CB_ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnEntrar)
                     .addComponent(BtnRegistrar))
                 .addGap(39, 39, 39))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(fondo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE))
         );
 
         pack();
@@ -155,27 +140,31 @@ IngresoGUI l;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
-    private void RBMasterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RBMasterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RBMasterActionPerformed
-
-    private void RBJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RBJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RBJugadorActionPerformed
-
     private void BtnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnEntrarMouseClicked
         IngresoYRegistro cons = new IngresoYRegistro();
-        String User, pass;
+        
 
-        User= txtUsuario.getText();
-        pass= Password.getText();
-        if (RBJugador.isSelected()){
-            System.out.println("entra al buton action");
-        cons.IngresoJugador(User, pass);
-        }
-        if(RBMaster.isSelected()){
-        cons.IngresoMaster(User,pass);
-        }
+        String usuario = txtUsuario.getText();
+        String contraseña = textPass.getText();
+        
+        
+        if((usuario.length()<=0)||(contraseña.length()<=0)){
+		            JOptionPane.showMessageDialog(contentPane,
+			                "Falta por rellenar algun campo del formulario",
+			                "ERROR",
+			                JOptionPane.ERROR_MESSAGE);
+				}
+        
+        String itemSeleecionado = (String)CB_ingreso.getSelectedItem();
+       if ("Master".equals(itemSeleecionado)){
+            cons.IngresoMaster(usuario,contraseña);
+            
+		            
+        } 
+       else
+           {
+           cons.IngresoJugador(usuario, contraseña);;
+       }
         
         
 
@@ -239,16 +228,15 @@ RegistroGUI  r= new RegistroGUI(l);
     public void setBtnEntrar() {
         BtnEntrar.setBackground(Color.red);
     }
-
+private JPanel contentPane;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnEntrar;
     private javax.swing.JButton BtnRegistrar;
+    private javax.swing.JComboBox<String> CB_ingreso;
     private javax.swing.JLabel LblUsuario;
-    private javax.swing.JPasswordField Password;
-    private javax.swing.JRadioButton RBJugador;
-    private javax.swing.JRadioButton RBMaster;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel lblContraseña;
+    private javax.swing.JTextField textPass;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
