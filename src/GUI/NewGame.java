@@ -514,6 +514,10 @@ private JPanel contentPane;
         this.constructor = constructor;
     }
 
+    public void setVisible() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
 
 }

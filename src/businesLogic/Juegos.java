@@ -4,6 +4,7 @@ package businesLogic;
 import GUI.Game;
 import GUI.MasterGUI;
 import GUI.NewGame;
+import GUI.NewGameFrame;
 
 import data.Items;
 import data.Juego;
@@ -81,16 +82,19 @@ public class Juegos {
     public void CrearJuego(int numeroDeJuego, String user, Juego[] juego){
         System.out.println("entra al metodo");
         
-        System.out.println("crea el constructor de NewGameGUI");
+        
         try{
-        /*
-            NewGame cons = new NewGame();
-            cons.setVisible();
+        
+            NewGameFrame cons = new NewGameFrame();
+            System.out.println("crea el constructor de NewGameGUI");
+            cons.setVisible(true);
+            cons.setUsuario(user);
             cons.setConstructor(user);
             
             
             
-            */
+            
+            
         
         }catch(Exception e){
             System.out.println("el problema es "+e);
