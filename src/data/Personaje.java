@@ -51,7 +51,7 @@ public class Personaje {
     public void savePersonaje(Personaje personaje){
         
         
-        final Path archivoSer = new File(personaje.getNombre()).toPath();
+        final Path archivoSer = new File("data\\NPCs\\"+personaje.getNombre()+".ser").toPath();
         try {
             final ObjectOutputStream guardarPersonaje = new ObjectOutputStream(Files.newOutputStream(archivoSer));
             guardarPersonaje.writeObject(personaje);
@@ -67,7 +67,7 @@ public class Personaje {
         Personaje objeto = new Personaje();
       try{
             
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\NPCs\\"+nombreObjeto+".ser").toPath();
+            final Path archivoSer = new File("data\\NPCs\\"+nombreObjeto+".ser").toPath();
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             objeto  = (Personaje)leerUsuario.readObject();
             leerUsuario.close();

@@ -5,6 +5,14 @@
  */
 package GUI;
 
+import businesLogic.Juegos;
+import data.Items;
+import data.Juego;
+import data.Jugador;
+import data.Maps;
+import data.Monstruo;
+import data.Personaje;
+import data.Vitacora;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -13,7 +21,7 @@ import javax.swing.JPanel;
  * @author beto arias
  */
 public class NewGame extends javax.swing.JPanel  {
-
+String constructor = new String();
     /**
      * Creates new form NewGame
      */
@@ -33,22 +41,22 @@ public class NewGame extends javax.swing.JPanel  {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        usuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        nombreJuego = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        monstruo1 = new javax.swing.JRadioButton();
+        monstruo2 = new javax.swing.JRadioButton();
+        monstruo3 = new javax.swing.JRadioButton();
+        monstruo4 = new javax.swing.JRadioButton();
+        monstruo5 = new javax.swing.JRadioButton();
+        monstruo6 = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        tAHistoria = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         CB_Mapa1 = new javax.swing.JCheckBox();
         CB_Mapa2 = new javax.swing.JCheckBox();
@@ -85,20 +93,20 @@ public class NewGame extends javax.swing.JPanel  {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Monstruos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 112, 112))); // NOI18N
 
-        jRadioButton1.setText("Monstruo 1");
-        jRadioButton1.setToolTipText("Descripcion monstruo 1");
+        monstruo1.setText("Monstruo 1");
+        monstruo1.setToolTipText("Descripcion monstruo 1");
 
-        jRadioButton2.setText("Monstruo 2");
-        jRadioButton2.setToolTipText("Descripcion monstruo 2");
+        monstruo2.setText("Monstruo 2");
+        monstruo2.setToolTipText("Descripcion monstruo 2");
 
-        jRadioButton3.setText("Monstruo 3");
-        jRadioButton3.setToolTipText("Descripcion monstruo 3");
+        monstruo3.setText("Monstruo 3");
+        monstruo3.setToolTipText("Descripcion monstruo 3");
 
-        jRadioButton4.setText("Monstruo 4");
+        monstruo4.setText("Monstruo 4");
 
-        jRadioButton5.setText("Monstruo 5");
+        monstruo5.setText("Monstruo 5");
 
-        jRadioButton6.setText("Monstruo 6");
+        monstruo6.setText("Monstruo 6");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,37 +115,37 @@ public class NewGame extends javax.swing.JPanel  {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6))
+                    .addComponent(monstruo1)
+                    .addComponent(monstruo2)
+                    .addComponent(monstruo3)
+                    .addComponent(monstruo4)
+                    .addComponent(monstruo5)
+                    .addComponent(monstruo6))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jRadioButton1)
+                .addComponent(monstruo1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(monstruo2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(monstruo3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton4)
+                .addComponent(monstruo4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton5)
+                .addComponent(monstruo5)
                 .addGap(3, 3, 3)
-                .addComponent(jRadioButton6)
+                .addComponent(monstruo6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historia", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 102, 102))); // NOI18N
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        tAHistoria.setColumns(20);
+        tAHistoria.setRows(5);
+        jScrollPane1.setViewportView(tAHistoria);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -304,8 +312,18 @@ public class NewGame extends javax.swing.JPanel  {
         );
 
         Btn_NPC.setText("Crear NPC");
+        Btn_NPC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_NPCActionPerformed(evt);
+            }
+        });
 
         Btn_CrearGame.setText("Crear Juego");
+        Btn_CrearGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_CrearGameActionPerformed(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/C431nD9VMAAis71.png"))); // NOI18N
 
@@ -330,7 +348,7 @@ public class NewGame extends javax.swing.JPanel  {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel2))
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -338,7 +356,7 @@ public class NewGame extends javax.swing.JPanel  {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nombreJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -367,9 +385,9 @@ public class NewGame extends javax.swing.JPanel  {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
@@ -398,6 +416,53 @@ public class NewGame extends javax.swing.JPanel  {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Btn_NPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_NPCActionPerformed
+        NPCGUI npc = new NPCGUI(); 
+        npc.setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_Btn_NPCActionPerformed
+
+    private void Btn_CrearGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_CrearGameActionPerformed
+        Juego crearJuego ;
+        Monstruo[] mons= new Monstruo[11] ;
+        Monstruo monstruo = new Monstruo();
+        String[] aux = new String [11];
+        String nombre, historia;
+        Juegos constr = new Juegos();
+        int numeroDeJugadores;
+        String [] jugadores = new String[5] ;
+        Items[] ItemsAUsar = new Items[7];
+        String[] NPCs = new String[3];
+        Vitacora vitacoras [];
+        Maps mapas[];
+        
+       // asignacion para monstruos, se necesita una lista de chekboxes
+        mons= null;
+        nombre = usuario.getText();
+        historia = tAHistoria.getText();
+        numeroDeJugadores = jComboBox1.getSelectedIndex();
+        // asignacion de jugadores, cambiar en el constructor, a que sea de tipo String, solo pedir el nombre y con este buscar el PERSONAJE
+        jugadores = null;
+        //asigancion de items, se necesita una lista de chekboxes 
+        ItemsAUsar = null;
+        // asignacion de npcs, se necesita una lista de chekboxes 
+        NPCs = null;
+        vitacoras = null;
+        //asignacion de mapas, se necesita una lista de chekboxes 
+        mapas= null;
+        
+        //// creacion del objeto
+        crearJuego= new Juego(mons, historia, numeroDeJugadores, jugadores, ItemsAUsar, NPCs, vitacoras, mapas, nombre);
+        if(crearJuego.saveJuego(crearJuego)){
+            constr.salvarJuego(crearJuego, constructor);
+           // cerrar el panel de creacion , y enviar un message box diciendo que se creo el juego
+        }
+        
+        
+    }//GEN-LAST:event_Btn_CrearGameActionPerformed
 
 private JPanel contentPane;
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -429,15 +494,26 @@ private JPanel contentPane;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JRadioButton monstruo1;
+    private javax.swing.JRadioButton monstruo2;
+    private javax.swing.JRadioButton monstruo3;
+    private javax.swing.JRadioButton monstruo4;
+    private javax.swing.JRadioButton monstruo5;
+    private javax.swing.JRadioButton monstruo6;
+    private javax.swing.JTextField nombreJuego;
+    private javax.swing.JTextArea tAHistoria;
+    private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
+
+    public String getConstructor() {
+        return constructor;
+    }
+
+    public void setConstructor(String constructor) {
+        this.constructor = constructor;
+    }
+
+   
+
 }

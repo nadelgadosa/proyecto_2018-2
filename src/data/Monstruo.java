@@ -57,7 +57,7 @@ public class Monstruo {
         Monstruo objeto = new Monstruo();
         try{
             
-            final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Monstruos\\"+nombreObjeto+".ser").toPath();
+            final Path archivoSer = new File("data\\Monstruos\\"+nombreObjeto+".ser").toPath();
             final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
             objeto  = (Monstruo)leerUsuario.readObject();
             leerUsuario.close();

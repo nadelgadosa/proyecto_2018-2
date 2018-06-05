@@ -182,7 +182,18 @@ public class Master extends Usuario {
         
     }
        
-       
+    public void actualizarLista (String usuario, String ruta, String nombreJuego){
+         File outFile = new File (ruta+".txt");
+        try {
+            
+            PrintWriter pW = new PrintWriter(outFile);
+            pW.println(nombreJuego);
+            pW.close();
+            System.out.println("se actualizo el .txt");
+        } catch (IOException ex) {
+            Logger.getLogger(Master.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }   
        
        
     public int getJuegos() {

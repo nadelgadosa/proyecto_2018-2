@@ -1,6 +1,7 @@
 package data;
 
 import java.io.File;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,13 +10,13 @@ public class Juego {
    private Monstruo[] monstruos ;
    private String historia, nombre;
    private int numeroDeJugadores ;
-   private Jugador[] jugadores = new Jugador[5];
+   private String[] jugadores = new String[5];
    private Items [] itemsAUsar = new Items [7] ;
    private Vitacora[] vitacora ; 
-   private Personaje [] NPCs =  new Personaje [3] ;
+   private String [] NPCs =  new String [3] ;
    private Maps[] mapas ;
 
-    public Juego(Monstruo[] monstruos, String historia, int numeroDeJugadores, Jugador[] jugadores, Items[] itemsAUsar, Personaje[] NPCs, Vitacora[] vitacora, Maps[] mapas, String nombre) {
+    public Juego(Monstruo[] monstruos, String historia, int numeroDeJugadores, String[] jugadores, Items[] itemsAUsar, String[] NPCs, Vitacora[] vitacora, Maps[] mapas, String nombre) {
         this.monstruos = monstruos;
         this.nombre = nombre;
         this.historia = historia;
@@ -39,21 +40,35 @@ public class Juego {
     
 }
     
-    public void saveJuego(Juego juego){
+    public boolean saveJuego(Juego juego){
+        boolean bool = false ;
         
-        
-        final Path archivoSer = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\proyecto_rol\\data\\Jugador\\"+juego.getNombre()+".ser").toPath();
+        final Path archivoSer = new File("data\\Master\\"+juego.getNombre()+".ser").toPath();
         try {
             final ObjectOutputStream guardarJuego = new ObjectOutputStream(Files.newOutputStream(archivoSer));
             guardarJuego.writeObject(juego);
             guardarJuego.close();
+            bool= true;
         } catch (Exception ex) {
             
         }
         
-        
+        return bool;
     }
-    
+     public Juego leerObjetoJuego(String nombreObjeto){
+        Juego objeto = new Juego();
+      try{
+            
+            final Path archivoSer = new File("data\\NPCs\\"+nombreObjeto+".ser").toPath();
+            final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
+            objeto  = (Juego)leerUsuario.readObject();
+            leerUsuario.close();
+            
+        }catch(Exception e){
+                System.out.println(e);   
+        }  
+      return objeto;
+    }
  
      
      
@@ -91,10 +106,10 @@ public class Juego {
     public void setNumeroDeJugadores(int numeroDeJugadores) {
         this.numeroDeJugadores = numeroDeJugadores;
     }
-    public Jugador[] getJugadores() {
+    public String[] getJugadores() {
         return jugadores;
     }
-    public void setJugadores(Jugador[] jugadores) {
+    public void setJugadores(String[] jugadores) {
         this.jugadores = jugadores;
     }
     public Items[] getItemsAUsar() {
@@ -109,10 +124,10 @@ public class Juego {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public Personaje[] getNPCs() {
+    public String[] getNPCs() {
         return NPCs;
     }
-    public void setNPCs(Personaje[] NPCs) {
+    public void setNPCs(String[] NPCs) {
         this.NPCs = NPCs;
     }
     

@@ -8,6 +8,7 @@ import GUI.NewGame;
 import data.Items;
 import data.Juego;
 import data.Jugador;
+import data.Master;
 import data.Monstruo;
 import data.Personaje;
 
@@ -27,12 +28,13 @@ public class Juegos {
         String numeroDeJugadores1 = Integer.toString(juego[numeroDeJuego].getNumeroDeJugadores());
         Items [] itemsObjeto ;
         Monstruo [] MonstruoList ;
-        Personaje[] NPCs = new Personaje [3];
-        Jugador [] personajes = new Jugador[5];
+        String[] NPCs = new String [3];
+        String [] personajes = new String[5];
+        Personaje [] objetosPersonaje = new Personaje[5];
         String [] itemsTexto =null;
         String [] monstruosTexto = null ;
         String [] NPCsTexto =null;
-        
+        Jugador jug = new Jugador();
         cons.setVisible(true);
         try{
             
@@ -52,12 +54,13 @@ public class Juegos {
             }
             cons.setItemsList(itemsTexto);
             personajes = juego[numeroDeJuego].getJugadores();
-            cons.setJugador1(personajes[0].getNombreUsuario());
-            cons.setJugador1(personajes[1].getNombreUsuario());
-            cons.setJugador1(personajes[2].getNombreUsuario());
-            cons.setJugador1(personajes[3].getNombreUsuario());
-            cons.setJugador1(personajes[4].getNombreUsuario());
-            cons.setJugador1(personajes[5].getNombreUsuario());
+            objetosPersonaje= jug.listaDeObjetosPersonaje(personajes);
+            cons.setJugador1(objetosPersonaje[0].toString() );
+            cons.setJugador2(objetosPersonaje[1].toString());
+            cons.setJugador3(objetosPersonaje[2].toString());
+            cons.setJugador4(objetosPersonaje[3].toString());
+            cons.setJugador5(objetosPersonaje[4].toString());
+            cons.setJugador6(objetosPersonaje[5].toString());
             
             NPCs = juego[numeroDeJuego].getNPCs();
             for (int i = 0; i < juego[numeroDeJuego].getItemsAUsar().length ; i++) {
@@ -80,7 +83,14 @@ public class Juegos {
         
         System.out.println("crea el constructor de NewGameGUI");
         try{
-        
+        /*
+            NewGame cons = new NewGame();
+            cons.setVisible();
+            cons.setConstructor(user);
+            
+            
+            
+            */
         
         }catch(Exception e){
             System.out.println("el problema es "+e);
@@ -88,7 +98,10 @@ public class Juegos {
         
         
     }
-    
+    public void salvarJuego(Juego juego, String user){
+        Master cons = new Master();
+        cons.actualizarLista(user, "data\\Master\\"+user, juego.getNombre());
+    }
     
     
 }
