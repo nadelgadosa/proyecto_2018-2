@@ -5,9 +5,12 @@
  */
 package GUI;
 import data.Juego;
+import data.Jugador;
+import data.Personaje;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 /**
  *
@@ -107,24 +110,74 @@ Juego constructor = new Juego();
         jLabel1.setText("NPC");
 
         NPC1.setText("NPC 1");
+        NPC1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NPC1ActionPerformed(evt);
+            }
+        });
 
         NPC2.setText("NPC 2");
+        NPC2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NPC2ActionPerformed(evt);
+            }
+        });
 
         NPC3.setText("NPC 3");
+        NPC3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NPC3ActionPerformed(evt);
+            }
+        });
 
         NPC4.setText("NPC 4");
+        NPC4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NPC4ActionPerformed(evt);
+            }
+        });
 
         jugador1.setText("jugador1");
+        jugador1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jugador1ActionPerformed(evt);
+            }
+        });
 
         jugador2.setText("jugador2");
+        jugador2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jugador2ActionPerformed(evt);
+            }
+        });
 
         jugador3.setText("jugador3");
+        jugador3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jugador3ActionPerformed(evt);
+            }
+        });
 
         jugador4.setText("jugador4");
+        jugador4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jugador4ActionPerformed(evt);
+            }
+        });
 
         jugador5.setText("jugador5");
+        jugador5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jugador5ActionPerformed(evt);
+            }
+        });
 
         jugador6.setText("jugador6");
+        jugador6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jugador6ActionPerformed(evt);
+            }
+        });
 
         monstruosList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "monstruo 1", "monstruo 2", "monstruo 3", "monstruo 4", "monstruo 5" };
@@ -296,6 +349,110 @@ Juego constructor = new Juego();
     private void historiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historiaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_historiaActionPerformed
+
+    private void jugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugador1ActionPerformed
+       if(jugador1.getText()!= null){
+            String[] nombrePersonaje= new String[5];
+            nombrePersonaje[0]= jugador1.getText();
+            Personaje[] personaje = new Personaje[5];
+            Jugador  aux = new Jugador();
+       
+       personaje  = aux.listaDeObjetosPersonaje(nombrePersonaje) ;
+       JOptionPane.showMessageDialog(rootPane, personaje[0].toString());
+       }
+       
+    }//GEN-LAST:event_jugador1ActionPerformed
+
+    private void jugador2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugador2ActionPerformed
+       if(jugador2.getText()!= null){
+            String[] nombrePersonaje= new String[5];
+            nombrePersonaje[0]= jugador2.getText();
+            Personaje[] personaje = new Personaje[5];
+            Jugador  aux = new Jugador();
+       
+       personaje  = aux.listaDeObjetosPersonaje(nombrePersonaje) ;
+       JOptionPane.showMessageDialog(rootPane, personaje[0].toString());
+       }
+    }//GEN-LAST:event_jugador2ActionPerformed
+
+    private void jugador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugador3ActionPerformed
+       if(jugador3.getText()!= null){
+            String[] nombrePersonaje= new String[5];
+            nombrePersonaje[0]= jugador3.getText();
+            Personaje[] personaje = new Personaje[5];
+            Jugador  aux = new Jugador();
+       
+       personaje  = aux.listaDeObjetosPersonaje(nombrePersonaje) ;
+       JOptionPane.showMessageDialog(rootPane, personaje[0].toString());
+       }
+    }//GEN-LAST:event_jugador3ActionPerformed
+
+    private void jugador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugador4ActionPerformed
+       if(jugador4.getText()!= null){
+            String[] nombrePersonaje= new String[5];
+            nombrePersonaje[0]= jugador4.getText();
+            Personaje[] personaje = new Personaje[5];
+            Jugador  aux = new Jugador();
+       
+       personaje  = aux.listaDeObjetosPersonaje(nombrePersonaje) ;
+       JOptionPane.showMessageDialog(rootPane, personaje[0].toString());
+       }
+    }//GEN-LAST:event_jugador4ActionPerformed
+
+    private void jugador5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugador5ActionPerformed
+       if(jugador5.getText()!= null){
+            String[] nombrePersonaje= new String[5];
+            nombrePersonaje[0]= jugador5.getText();
+            Personaje[] personaje = new Personaje[5];
+            Jugador  aux = new Jugador();
+       
+       personaje  = aux.listaDeObjetosPersonaje(nombrePersonaje) ;
+       JOptionPane.showMessageDialog(rootPane, personaje[0].toString());
+       }
+    }//GEN-LAST:event_jugador5ActionPerformed
+
+    private void jugador6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugador6ActionPerformed
+       if(jugador6.getText()!= null){
+            String[] nombrePersonaje= new String[5];
+            nombrePersonaje[0]= jugador6.getText();
+            Personaje[] personaje = new Personaje[5];
+            Jugador  aux = new Jugador();
+       
+       personaje  = aux.listaDeObjetosPersonaje(nombrePersonaje) ;
+       JOptionPane.showMessageDialog(rootPane, personaje[0].toString());
+       }
+    }//GEN-LAST:event_jugador6ActionPerformed
+
+    
+    
+    
+    private void NPC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NPC1ActionPerformed
+        if(NPC1.getText()!= null){
+       Personaje npc = new Personaje();
+       JOptionPane.showMessageDialog(rootPane, npc.leerObjetoPersonaje(NPC1.getText()).toString());
+       }
+    }//GEN-LAST:event_NPC1ActionPerformed
+
+    private void NPC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NPC2ActionPerformed
+         if(NPC2.getText()!= null){
+       Personaje npc = new Personaje();
+       JOptionPane.showMessageDialog(rootPane, npc.leerObjetoPersonaje(NPC2.getText()).toString());
+       }
+    }//GEN-LAST:event_NPC2ActionPerformed
+
+    private void NPC3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NPC3ActionPerformed
+         if(NPC3.getText()!= null){
+       Personaje npc = new Personaje();
+       JOptionPane.showMessageDialog(rootPane, npc.leerObjetoPersonaje(NPC3.getText()).toString());
+       }
+    }//GEN-LAST:event_NPC3ActionPerformed
+
+    private void NPC4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NPC4ActionPerformed
+         if(NPC4.getText()!= null){
+       Personaje npc = new Personaje();
+       JOptionPane.showMessageDialog(rootPane, npc.leerObjetoPersonaje(NPC4.getText()).toString());
+       }
+    }//GEN-LAST:event_NPC4ActionPerformed
 
     /**
      * @param args the command line arguments

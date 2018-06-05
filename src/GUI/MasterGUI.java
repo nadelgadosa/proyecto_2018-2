@@ -127,7 +127,7 @@ Juego[] constructor= new Juego[3];
     private void juego2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_juego2ActionPerformed
         Juegos cons = new Juegos();
         String user =  nombreMaster.getText();
-        if(juego1.getText().equals("new")){
+        if(juego2.getText().equals("new")){
             cons.CrearJuego(1,user,constructor);
         }else{
             cons.entrarEnJuego(1,user,constructor);
@@ -137,7 +137,7 @@ Juego[] constructor= new Juego[3];
     private void juego3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_juego3ActionPerformed
         Juegos cons = new Juegos();
         String user =  nombreMaster.getText();
-        if(juego1.getText().equals("new")){
+        if(juego3.getText().equals("new")){
             cons.CrearJuego(2,user,constructor);
         }else{
             cons.entrarEnJuego(2,user,constructor);
@@ -147,7 +147,7 @@ Juego[] constructor= new Juego[3];
     private void juego4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_juego4ActionPerformed
         Juegos cons = new Juegos();
         String user =  nombreMaster.getText();
-        if(juego1.getText().equals("new")){
+        if(juego4.getText().equals("new")){
             cons.CrearJuego(3,user,constructor);
         }else{
             cons.entrarEnJuego(3,user,constructor);

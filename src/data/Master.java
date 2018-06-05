@@ -66,7 +66,7 @@ public class Master extends Usuario {
             
             
         }catch(Exception e){
-            System.out.println("no entra al try catch"); 
+            System.out.println("se sale del try catch por: "+e); 
         }
         return master;
     }

@@ -307,51 +307,81 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="NPC 1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NPC1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="NPC2">
       <Properties>
         <Property name="text" type="java.lang.String" value="NPC 2"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NPC2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="NPC3">
       <Properties>
         <Property name="text" type="java.lang.String" value="NPC 3"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NPC3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="NPC4">
       <Properties>
         <Property name="text" type="java.lang.String" value="NPC 4"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NPC4ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jugador1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jugador1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jugador1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jugador2">
       <Properties>
         <Property name="text" type="java.lang.String" value="jugador2"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jugador2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jugador3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jugador3"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jugador3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jugador4">
       <Properties>
         <Property name="text" type="java.lang.String" value="jugador4"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jugador4ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jugador5">
       <Properties>
         <Property name="text" type="java.lang.String" value="jugador5"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jugador5ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jugador6">
       <Properties>
         <Property name="text" type="java.lang.String" value="jugador6"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jugador6ActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane5">
       <AuxValues>
