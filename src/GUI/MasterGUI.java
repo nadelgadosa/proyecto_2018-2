@@ -23,7 +23,7 @@ Juego[] constructor= new Juego[3];
     public MasterGUI() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -114,7 +114,8 @@ Juego[] constructor= new Juego[3];
         String user =  nombreMaster.getText();
         
         if(juego1.getText().equals("new")){
-            cons.CrearJuego();
+            System.out.println("entra al if del boton");
+            cons.CrearJuego(0,user,constructor);
         }else{
             cons.entrarEnJuego(0,user,constructor);
         }
@@ -127,7 +128,7 @@ Juego[] constructor= new Juego[3];
         Juegos cons = new Juegos();
         String user =  nombreMaster.getText();
         if(juego1.getText().equals("new")){
-            cons.CrearJuego();
+            cons.CrearJuego(1,user,constructor);
         }else{
             cons.entrarEnJuego(1,user,constructor);
         }
@@ -137,7 +138,7 @@ Juego[] constructor= new Juego[3];
         Juegos cons = new Juegos();
         String user =  nombreMaster.getText();
         if(juego1.getText().equals("new")){
-            cons.CrearJuego();
+            cons.CrearJuego(2,user,constructor);
         }else{
             cons.entrarEnJuego(2,user,constructor);
         }
@@ -147,7 +148,7 @@ Juego[] constructor= new Juego[3];
         Juegos cons = new Juegos();
         String user =  nombreMaster.getText();
         if(juego1.getText().equals("new")){
-            cons.CrearJuego();
+            cons.CrearJuego(3,user,constructor);
         }else{
             cons.entrarEnJuego(3,user,constructor);
         }

@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
  * @author beto arias
  */
 public class Game extends javax.swing.JFrame {
-
+Juego constructor = new Juego();
     /**
      * Creates new form Game
      */
@@ -47,10 +47,10 @@ public class Game extends javax.swing.JFrame {
         Btn_Maps = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        NPC1 = new javax.swing.JButton();
+        NPC2 = new javax.swing.JButton();
+        NPC3 = new javax.swing.JButton();
+        NPC4 = new javax.swing.JButton();
         jugador1 = new javax.swing.JButton();
         jugador2 = new javax.swing.JButton();
         jugador3 = new javax.swing.JButton();
@@ -106,13 +106,13 @@ public class Game extends javax.swing.JFrame {
 
         jLabel1.setText("NPC");
 
-        jButton1.setText("NPC 1");
+        NPC1.setText("NPC 1");
 
-        jButton2.setText("NPC 2");
+        NPC2.setText("NPC 2");
 
-        jButton3.setText("NPC 3");
+        NPC3.setText("NPC 3");
 
-        jButton4.setText("NPC 4");
+        NPC4.setText("NPC 4");
 
         jugador1.setText("jugador1");
 
@@ -153,13 +153,13 @@ public class Game extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(NPC1)
                                 .addGap(26, 26, 26)
-                                .addComponent(jButton2)
+                                .addComponent(NPC2)
                                 .addGap(29, 29, 29)
-                                .addComponent(jButton3)
+                                .addComponent(NPC3)
                                 .addGap(33, 33, 33)
-                                .addComponent(jButton4)))
+                                .addComponent(NPC4)))
                         .addGap(104, 110, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Btn_Maps)
@@ -282,10 +282,10 @@ public class Game extends javax.swing.JFrame {
                                 .addComponent(Btn_Vitacora)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
+                    .addComponent(NPC1)
+                    .addComponent(NPC2)
+                    .addComponent(NPC3)
+                    .addComponent(NPC4)
                     .addComponent(Btn_Maps))
                 .addGap(70, 70, 70))
         );
@@ -337,15 +337,15 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JButton Btn_Maps;
     private javax.swing.JButton Btn_See;
     private javax.swing.JButton Btn_Vitacora;
+    private javax.swing.JButton NPC1;
+    private javax.swing.JButton NPC2;
+    private javax.swing.JButton NPC3;
+    private javax.swing.JButton NPC4;
     private javax.swing.JTextArea TxtA_Historia;
     private javax.swing.JTextArea TxtA_Vitacora;
     private javax.swing.JButton bt_EDIT1;
     private javax.swing.JTextField historia;
     private javax.swing.JList<String> itemsList;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -477,6 +477,46 @@ public class Game extends javax.swing.JFrame {
 
     public void setJugador6(String texto) {
         jugador6.setText(texto);
+    }
+
+    public JButton getNPC1() {
+        return NPC1;
+    }
+
+    public void setNPC1(String texto) {
+        NPC1.setText(texto);
+    }
+
+    public JButton getNPC2() {
+        return NPC2;
+    }
+
+    public void setNPC2(String texto) {
+         NPC2.setText(texto);
+    }
+
+    public JButton getNPC3() {
+        return NPC3;
+    }
+
+    public void setNPC3(String texto) {
+        NPC3.setText(texto);
+    }
+
+    public JButton getNPC4() {
+        return NPC4;
+    }
+
+    public void setNPC4(String texto) {
+        NPC4.setText(texto);
+    }
+
+    public Juego getConstructor() {
+        return constructor;
+    }
+
+    public void setConstructor(Juego constructor) {
+        this.constructor = constructor;
     }
 
     

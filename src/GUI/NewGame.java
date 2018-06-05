@@ -12,13 +12,15 @@ import javax.swing.JPanel;
  *
  * @author beto arias
  */
-public class NewGame extends javax.swing.JPanel {
+public class NewGame extends javax.swing.JPanel  {
 
     /**
      * Creates new form NewGame
      */
     public NewGame() {
         initComponents();
+        setVisible(true);
+        
     }
 
     /**
@@ -351,7 +353,7 @@ public class NewGame extends javax.swing.JPanel {
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel4)
-                                .addGap(0, 32, Short.MAX_VALUE))))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(Btn_NPC)

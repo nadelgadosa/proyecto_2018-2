@@ -2,6 +2,9 @@
 package businesLogic;
 
 import GUI.Game;
+import GUI.MasterGUI;
+import GUI.NewGame;
+
 import data.Items;
 import data.Juego;
 import data.Jugador;
@@ -18,14 +21,17 @@ public class Juegos {
     
     
     public void entrarEnJuego(int numeroDeJuego, String user, Juego[] juego){
+        
         Game cons= new Game();
+        cons.setConstructor(juego[numeroDeJuego]);
         String numeroDeJugadores1 = Integer.toString(juego[numeroDeJuego].getNumeroDeJugadores());
         Items [] itemsObjeto ;
         Monstruo [] MonstruoList ;
+        Personaje[] NPCs = new Personaje [3];
         Jugador [] personajes = new Jugador[5];
         String [] itemsTexto =null;
         String [] monstruosTexto = null ;
-       
+        String [] NPCsTexto =null;
         
         cons.setVisible(true);
         try{
@@ -52,6 +58,16 @@ public class Juegos {
             cons.setJugador1(personajes[3].getNombreUsuario());
             cons.setJugador1(personajes[4].getNombreUsuario());
             cons.setJugador1(personajes[5].getNombreUsuario());
+            
+            NPCs = juego[numeroDeJuego].getNPCs();
+            for (int i = 0; i < juego[numeroDeJuego].getItemsAUsar().length ; i++) {
+                NPCsTexto [i] = NPCs[i].toString();
+            }
+            cons.setNPC1(NPCsTexto [0]);
+            cons.setNPC2(NPCsTexto [1]);
+            cons.setNPC3(NPCsTexto [2]);
+            cons.setNPC4(NPCsTexto [3]);
+            
         }catch(Exception e){
             System.out.println("se sale del catch por: "+e);
         }
@@ -59,8 +75,18 @@ public class Juegos {
         
         
     }
-    public void CrearJuego(){
-        System.out.println("pos aqui termina");
+    public void CrearJuego(int numeroDeJuego, String user, Juego[] juego){
+        System.out.println("entra al metodo");
+        
+        System.out.println("crea el constructor de NewGameGUI");
+        try{
+        
+        
+        }catch(Exception e){
+            System.out.println("el problema es "+e);
+        }
+        
+        
     }
     
     
