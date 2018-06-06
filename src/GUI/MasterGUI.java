@@ -44,24 +44,28 @@ Juego[] constructor= new Juego[3];
 
         jLabel1.setText("Master");
 
+        juego1.setText("new");
         juego1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 juego1ActionPerformed(evt);
             }
         });
 
+        juego2.setText("new");
         juego2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 juego2ActionPerformed(evt);
             }
         });
 
+        juego3.setText("new");
         juego3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 juego3ActionPerformed(evt);
             }
         });
 
+        juego4.setText("new");
         juego4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 juego4ActionPerformed(evt);

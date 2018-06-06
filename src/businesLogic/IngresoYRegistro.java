@@ -87,10 +87,10 @@ public class IngresoYRegistro {
                     Master.setConstructor(objetos);
         Master.setVisible(true);
         Master.setNombreMaster(MasterActual.getNombreUsuario());
-        Master.setJuego1(objetos[0].getNombre());
-        Master.setJuego2(MasterActual.descripcionDeJuego(objetos[1]));
-        Master.setJuego3(MasterActual.descripcionDeJuego(objetos[2]));
-        Master.setJuego4(MasterActual.descripcionDeJuego(objetos[3]));
+        Master.setJuego1(MasterActual.descripcionDeJuego(objetos[0].getNombre()));
+        Master.setJuego2(MasterActual.descripcionDeJuego(objetos[1].getNombre()));
+        Master.setJuego3(MasterActual.descripcionDeJuego(objetos[2].getNombre()));
+        Master.setJuego4(MasterActual.descripcionDeJuego(objetos[3].getNombre()));
         Master.setConstructor(objetos);
     }else{
      cons.setBtnEntrar();

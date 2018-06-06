@@ -103,8 +103,9 @@ public class Juegos {
         
     }
     public void salvarJuego(Juego juego, String user){
-        
+       
         Master cons = new Master();
+        
         cons.actualizarLista(user, "data\\Master\\"+user, juego.getNombre());
     }
     

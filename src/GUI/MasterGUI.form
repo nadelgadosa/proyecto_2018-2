@@ -72,21 +72,33 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="juego1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="new"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="juego1ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="juego2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="new"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="juego2ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="juego3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="new"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="juego3ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="juego4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="new"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="juego4ActionPerformed"/>
       </Events>

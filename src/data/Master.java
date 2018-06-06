@@ -210,19 +210,15 @@ public class Master extends Usuario {
     
     
     
-    public String descripcionDeJuego(Juego  juego){
+    public String descripcionDeJuego(String  juego){
        System.out.println("entra al metodo descripcion de Juego");
-       if(juego != null){
-          try{  
-            return juego.toString(); 
-        }catch(Exception e){
-            
-            System.out.println(e);
-            return "new";
-        } 
-       } else{
-           return "new";
-       }
+      
+          if (juego!= null){
+              return juego;
+          }else{
+              return "new";
+          }
+       
        
         
         
@@ -259,10 +255,39 @@ public class Master extends Usuario {
        
     public void actualizarLista (String usuario, String ruta, String nombreJuego){
          File outFile = new File (ruta+".txt");
-        try {
+         String[] aux= new String[3];
+         String juego1, juego2, juego3;
+         aux = listaDeJuegos(usuario);
+         juego1 = aux[0];
+         juego2 = aux[1];
+         juego3 = aux[2];
+         try {
             
             PrintWriter pW = new PrintWriter(outFile);
-            pW.println(nombreJuego);
+            if(juego1 != null){
+               pW.println(juego1);
+               
+               if(juego2!= null){
+                   pW.println(juego2);
+                   
+                   if(juego3 != null){
+                       pW.println(juego3);
+                       
+                   }else{
+                       pW.println(nombreJuego); 
+                   }
+                   
+               }else{
+                   pW.println(nombreJuego); 
+               }
+               
+            }else{
+              pW.println(nombreJuego);  
+            }
+            
+            
+            
+            
             pW.close();
             System.out.println("se actualizo el .txt");
         } catch (IOException ex) {
