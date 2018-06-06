@@ -70,7 +70,9 @@ public class IngresoYRegistro {
         
     MasterActual = MasterActual.BuscarUsuario(usuario);
     ingresar = MasterActual.verificarIngreso(MasterActual, contraseña);
+        System.out.println("completa el paso 2 ");
     if(ingresar){
+        System.out.println("entra al if de IngresoMaster-IngresoYRegistro-businesLogic ");
         Juegos = MasterActual.listaDeJuegos(usuario);
         System.out.println("sigue corriendo");
         

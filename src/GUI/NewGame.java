@@ -418,14 +418,15 @@ String constructor = new String();
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_NPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_NPCActionPerformed
-        NPCGUI npc = new NPCGUI(); 
-        npc.setVisible(true);
+        
+        
         
         
         
     }//GEN-LAST:event_Btn_NPCActionPerformed
 
     private void Btn_CrearGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_CrearGameActionPerformed
+        System.out.println("entra en el action performer de crear juego");
         Juego crearJuego ;
         Monstruo[] mons= new Monstruo[11] ;
         Monstruo monstruo = new Monstruo();

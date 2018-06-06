@@ -3,10 +3,11 @@ package data;
 import java.io.File;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Monstruo {
+public class Monstruo implements Serializable{
  private String nombre;
  private int nivel, xpPoints, heallPoints, iniciativa, fuerza, inteligencia, carisma, destreza, sabiduria;
  private Habilidad[] habilidades = new Habilidad[2];

@@ -3,10 +3,11 @@ package data;
 import java.io.File;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Items {
+public class Items implements Serializable{
     String nombre, descripcion;
     int modificador, nivel;
 

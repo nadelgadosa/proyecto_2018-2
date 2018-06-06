@@ -3,10 +3,11 @@ package data;
 import java.io.File;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Juego {
+public class Juego implements Serializable{
    private Monstruo[] monstruos ;
    private String historia, nombre;
    private int numeroDeJugadores ;
@@ -42,15 +43,19 @@ public class Juego {
     
     public boolean saveJuego(Juego juego){
         boolean bool = false ;
-        
+        System.out.println("entra al metodo salvar juego");
         final Path archivoSer = new File("data\\Master\\"+juego.getNombre()+".ser").toPath();
+        System.out.println("crea el final path con "+juego.getNombre());
         try {
+            System.out.println("entra al try catch");
             final ObjectOutputStream guardarJuego = new ObjectOutputStream(Files.newOutputStream(archivoSer));
+            System.out.println("crea el outputStream ");
             guardarJuego.writeObject(juego);
             guardarJuego.close();
             bool= true;
+            System.out.println("crea el objeto y asigan el valor 'true' a la variable a retornar");        
         } catch (Exception ex) {
-            
+            System.out.println("se sale del try catch de saveJuego-Juego por:"+ex); 
         }
         
         return bool;

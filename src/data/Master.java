@@ -89,29 +89,51 @@ public class Master extends Usuario {
     }
     
     public String [] listaDeJuegos(String user){
-        String [] juegos = null;
-        int i=0;
+        System.out.println("entra al metodo lista de juegos");
+        String aux;
+        String [] arregloDeNombresDeJuegos = new String[3];
+        
+        ;
+        
+        
+        System.out.println("crea las instancias para trabajar objetos");
          try {
+             System.out.println("entra al try catch");
             File inFile = new File("data\\Master\\"+user+".txt");
+             System.out.println("crea el file");
             FileReader fR = new FileReader(inFile);
+             System.out.println("crea el file reader");
             Scanner in = new Scanner(inFile);  
-            
-            
-            if(in.hasNext()){
-                while(in.hasNext()){
-                 
-                    juegos [i] = in.next();
-                    i++;
-                 
-                }    
-             }
+             System.out.println("crea el scanner");
+             if(in.hasNext()){//
+                  aux = in.next();
+                    arregloDeNombresDeJuegos[0] = aux;
+                    System.out.println("asigna valores al arreglo de Strings donde estan los nombres de los juegos "+ arregloDeNombresDeJuegos[0]+"    "+aux);  
+                    if(in.hasNext()){
+                        aux= in.next();
+                        arregloDeNombresDeJuegos[1] = aux;
+                        System.out.println("asigna valores al arreglo de Strings donde estan los nombres de los juegos "+ arregloDeNombresDeJuegos[1]+"    "+aux);
+                        if(in.hasNext()){
+                            aux= in.next();
+                            arregloDeNombresDeJuegos[2] = aux;
+                            System.out.println("asigna valores al arreglo de Strings donde estan los nombres de los juegos "+ arregloDeNombresDeJuegos[2]+"    "+aux);
+                            if(in.hasNext()){
+                                aux= in.next();
+                                arregloDeNombresDeJuegos[3] = aux;
+                                System.out.println("asigna valores al arreglo de Strings donde estan los nombres de los juegos "+ arregloDeNombresDeJuegos[3]+"    "+aux);
+                            }
+                        }
+                    }
+             }//
+                    
+                    
             
             
             in.close();           
         } catch (FileNotFoundException ex) {
              System.out.println(ex);
         } 
-        return juegos;
+        return arregloDeNombresDeJuegos;
     }
     
     public Juego[] listaDeObjetosJuegos (String [] nombresDeArchivos){

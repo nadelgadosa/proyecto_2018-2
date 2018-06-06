@@ -414,8 +414,8 @@ String constructor = new String();
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_NPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_NPCActionPerformed
-        NPCGUI npc = new NPCGUI();
-        npc.setVisible(true);
+//        NPCGUI npc = new NPCGUI();
+  //      npc.setVisible(true);
 
     }//GEN-LAST:event_Btn_NPCActionPerformed
 
@@ -435,7 +435,7 @@ String constructor = new String();
 
         // asignacion para monstruos, se necesita una lista de chekboxes
         mons= null;
-        nombre = usuario.getText();
+        nombre = nombreJuego.getText();
         historia = tAHistoria.getText();
         numeroDeJugadores = jComboBox1.getSelectedIndex();
         // asignacion de jugadores, cambiar en el constructor, a que sea de tipo String, solo pedir el nombre y con este buscar el PERSONAJE
