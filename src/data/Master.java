@@ -133,6 +133,7 @@ public class Master extends Usuario {
         } catch (FileNotFoundException ex) {
              System.out.println(ex);
         } 
+         System.out.println("debuelbe el arreglo de Strings");
         return arregloDeNombresDeJuegos;
     }
     
@@ -141,36 +142,88 @@ public class Master extends Usuario {
         
         
         Juego[] objetos = new Juego[3];
-        objetos = null;
-        for (int j = 0; j <= 3 ; j++) {
+        Juego aux=null;
+        
+        String [] arreglo = new String[3];
+        arreglo = nombresDeArchivos;
+        
+        
             System.out.println("entra al for del metodo");
-            try{
             
-            final Path archivoSer = new File("data\\Master\\"+nombresDeArchivos[j]+".ser").toPath();
-            final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
-            objetos [j] = (Juego)leerUsuario.readObject();
-            leerUsuario.close();
+            try{
+                System.out.println("entra al inicio del try cathc");
+            
+                if(arreglo[0]!= null){
+                    final Path archivoSer = new File("data\\Master\\"+arreglo[0]+".ser").toPath();
+                    System.out.println("crea el path de :"+arreglo[0]);
+                    final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
+                    System.out.println("crea el inputStream");
+                    aux = (Juego)leerUsuario.readObject();
+                    System.out.println("asigno el objeto");
+                    objetos[0]=aux;      
+                    System.out.println("asigna el objeto al array de objetos");
+                    leerUsuario.close();
+                    if(arreglo[1]!= null){
+                        final Path archivoSer2 = new File("data\\Master\\"+arreglo[1]+".ser").toPath();
+                        System.out.println("crea el path de :"+arreglo[0]);
+                        final ObjectInputStream leerUsuario2 = new ObjectInputStream(Files.newInputStream(archivoSer2));
+                        System.out.println("crea el inputStream");
+                        aux = (Juego)leerUsuario2.readObject();
+                        System.out.println("asigno el objeto");
+                        objetos[1]=aux;      
+                        System.out.println("asigna el objeto al array de objetos2");
+                        leerUsuario.close();
+                        if(arreglo[2]!= null){
+                            final Path archivoSer3 = new File("data\\Master\\"+arreglo[2]+".ser").toPath();
+                            System.out.println("crea el path de :"+arreglo[0]);
+                            final ObjectInputStream leerUsuario3 = new ObjectInputStream(Files.newInputStream(archivoSer3));
+                            System.out.println("crea el inputStream");
+                            aux = (Juego)leerUsuario3.readObject();
+                            System.out.println("asigno el objeto");
+                            objetos[2]=aux;      
+                            System.out.println("asigna el objeto al array de objetos3");
+                            leerUsuario.close();
+                            if(arreglo[3]!= null){
+                                final Path archivoSer4 = new File("data\\Master\\"+arreglo[3]+".ser").toPath();
+                                System.out.println("crea el path de :"+arreglo[0]);
+                                final ObjectInputStream leerUsuario4 = new ObjectInputStream(Files.newInputStream(archivoSer4));
+                                System.out.println("crea el inputStream");
+                                aux = (Juego)leerUsuario4.readObject();
+                                System.out.println("asigno el objeto");
+                                objetos[3]=aux;      
+                                System.out.println("asigna el objeto al array de objetos4");
+                                leerUsuario.close();
+                            }
+                        }
+                    }
+                }
+            
             
         }catch(Exception e){
             System.out.println("no lee los .ser, por que no existen");
                 System.out.println(e);   
         }
-        }
+        
         System.out.println("retorna el arreglo de objetos, asi este vacio");
         return objetos ;
     }
     
     
     
-    public String descripcionDeJuego(Juego [] juego, int i){
+    public String descripcionDeJuego(Juego  juego){
        System.out.println("entra al metodo descripcion de Juego");
-        try{  
-            return juego[i].toString(); 
+       if(juego != null){
+          try{  
+            return juego.toString(); 
         }catch(Exception e){
             
             System.out.println(e);
             return "new";
-        }
+        } 
+       } else{
+           return "new";
+       }
+       
         
         
         
@@ -238,7 +291,9 @@ public class Master extends Usuario {
     }
 
     public void setJuego(Juego[] juego) {
+        
         this.juego = juego;
+        System.out.println("asignacion exitosa");
     }
   
 }

@@ -62,6 +62,7 @@ public class IngresoYRegistro {
     public void IngresoMaster(String usuario, String contraseña){
         System.out.println("entra al metodo ingresoMaster en busines");
         boolean ingresar;
+        String aux="string de prueva";
         String [] Juegos = new String[3];       
         Juego[] objetos = new Juego[3];
         IngresoGUI cons = new IngresoGUI();
@@ -74,18 +75,22 @@ public class IngresoYRegistro {
     if(ingresar){
         System.out.println("entra al if de IngresoMaster-IngresoYRegistro-businesLogic ");
         Juegos = MasterActual.listaDeJuegos(usuario);
-        System.out.println("sigue corriendo");
+            System.out.println("sigue corriendo");
         
             objetos = MasterActual.listaDeObjetosJuegos(Juegos);
-            System.out.println("lee la los .ser de los objetos juego");
+            System.out.println("lee la los .ser de los objetos juego " );
             MasterActual.setJuego(objetos);
             System.out.println("asigna los objetos tipo juego a master");
+            
+            
+                    System.out.println("COMPROVACION DE QUE SI ASIGNO BIEN: "+aux);
+                    Master.setConstructor(objetos);
         Master.setVisible(true);
         Master.setNombreMaster(MasterActual.getNombreUsuario());
-        Master.setJuego1(MasterActual.descripcionDeJuego(objetos, 0));
-        Master.setJuego2(MasterActual.descripcionDeJuego(objetos, 1));
-        Master.setJuego3(MasterActual.descripcionDeJuego(objetos, 2));
-        Master.setJuego4(MasterActual.descripcionDeJuego(objetos, 3));
+        Master.setJuego1(objetos[0].getNombre());
+        Master.setJuego2(MasterActual.descripcionDeJuego(objetos[1]));
+        Master.setJuego3(MasterActual.descripcionDeJuego(objetos[2]));
+        Master.setJuego4(MasterActual.descripcionDeJuego(objetos[3]));
         Master.setConstructor(objetos);
     }else{
      cons.setBtnEntrar();

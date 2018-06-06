@@ -30,7 +30,8 @@ public class Juego implements Serializable{
     }
     @Override
     public String toString() {
-        return "nombre: "+getNombre()+"\nnumero de jugadores: "+getNumeroDeJugadores()+"\nultima sesion: #"+(vitacora.length+1)+" "+vitacora[vitacora.length].getFecha()+"\n\t"+vitacora[vitacora.length].getProgreso();
+        int aux = vitacora.length;
+        return "nombre: "+getNombre()+"\nnumero de jugadores: "+getNumeroDeJugadores()+"\nultima sesion: #"+(aux+1)+" "+vitacora[aux].getFecha();
     }
     
     
