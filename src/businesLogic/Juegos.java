@@ -26,7 +26,7 @@ public class Juegos {
         
         Game cons= new Game();
         cons.setConstructor(juego[numeroDeJuego]);
-        String numeroDeJugadores1 = Integer.toString(juego[numeroDeJuego].getNumeroDeJugadores());
+        String numeroDeJugadores1 = Integer.toString(juego[numeroDeJuego].getNumeroDeJugadores() + 1 );
         Items [] itemsObjeto ;
         Monstruo [] MonstruoList ;
         String[] NPCs = new String [3];
@@ -39,7 +39,7 @@ public class Juegos {
         cons.setVisible(true);
         try{
             
-            cons.setNombreJuego(user);
+            //cons.setNombreJuego(user);
             cons.setNombreJuego(juego[numeroDeJuego].getNombre());  
             cons.setNumeroJugadores(numeroDeJugadores1);
             cons.setTxtA_Historia(juego[numeroDeJuego].getHistoria());

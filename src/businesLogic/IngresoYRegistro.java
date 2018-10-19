@@ -15,18 +15,16 @@ import data.Personaje;
 
 
 public class IngresoYRegistro {
-    public static void main(String[] args) {
-        
-        JugadorGUI cons = new JugadorGUI();
-        cons.setVisible(true);
-        
-    }
+    
+   
+    
     public void IngresoMaster(){
     IngresoGUI cons = new IngresoGUI();
     
    
 
 }
+    
     public void IngresoJugador(String usuario, String contraseña){
         System.out.println("entra al metodo ingresoJugador en busines");
         boolean ingresar;

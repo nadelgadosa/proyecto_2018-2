@@ -10,7 +10,7 @@ public class Vitacora {
   private String fecha, progreso;
   
 
-    public Vitacora(int numeroDeVitacora, String fecha, String progreso, String[][] items) {
+    public Vitacora(int numeroDeVitacora, String fecha, String progreso) {
         this.numeroDeVitacora = numeroDeVitacora;
         this.fecha = fecha;
         this.progreso = progreso;

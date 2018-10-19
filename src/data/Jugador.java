@@ -34,11 +34,6 @@ public class Jugador extends Usuario {
     personaje[numeroDePersonaje] = new Personaje(nombre, juego, clase, raza, trasfondo, personalidad, nivel, xpPoints, heallPoints, iniciativa, fuerza, inteligencia, carisma, destreza, sabiduria, velocidad, armadura,  equipo,  objetos,  habilidades, habilidadesEspeciales);  
     }
     
-    
-    
-    
-    
-    
     public Jugador BuscarUsuario(String user){
         System.out.println("entra al metodo buscar usuario en data");
         Jugador jugador = new Jugador();
@@ -175,6 +170,9 @@ public class Jugador extends Usuario {
         }
         
     }
+    
+    
+    
     
     
     

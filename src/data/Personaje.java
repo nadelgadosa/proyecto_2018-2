@@ -39,7 +39,7 @@ public class Personaje implements Serializable{
     }
     @Override
     public String toString() {
-        return "nombre: "+getNombre()+"\nraza: "+ getRaza()+"\nclase: "+getClase()+"\njuego: "+ getJuego(); 
+        return "nombre: "+getNombre()+"\nraza: "+ getRaza()+"\nclase: "+getClase(); 
     }
     public Personaje() {
     }
@@ -101,6 +101,7 @@ public class Personaje implements Serializable{
     public void setRaza(String raza) {
         this.raza = raza;
     }
+    
     public String getTrasfondo() {
         return trasfondo;
     }

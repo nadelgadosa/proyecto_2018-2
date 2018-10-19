@@ -42,7 +42,7 @@ public class Master extends Usuario {
         super(null, null);
     }
   
-       public Master(int juegos, int permisos, String nombreUsusario, String clave) {
+    public Master(int juegos, int permisos, String nombreUsusario, String clave) {
         super(nombreUsusario, clave);
         this.juegos = juegos;
         this.permisos = permisos;
@@ -51,7 +51,7 @@ public class Master extends Usuario {
        
        
       
-     public Master BuscarUsuario(String user){
+    public Master BuscarUsuario(String user){
          System.out.println("entra al metodo buscar usuario de data");
         Master master = new Master();
         try{
@@ -208,8 +208,6 @@ public class Master extends Usuario {
         return objetos ;
     }
     
-    
-    
     public String descripcionDeJuego(String  juego){
        System.out.println("entra al metodo descripcion de Juego");
       
@@ -295,7 +293,11 @@ public class Master extends Usuario {
         }
     }   
        
-       
+     
+    
+    
+    
+    
     public int getJuegos() {
         return juegos;
     }

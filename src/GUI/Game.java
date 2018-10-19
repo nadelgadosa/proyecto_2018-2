@@ -137,42 +137,42 @@ Juego constructor = new Juego();
             }
         });
 
-        jugador1.setText("jugador1");
+        jugador1.setText("new");
         jugador1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jugador1ActionPerformed(evt);
             }
         });
 
-        jugador2.setText("jugador2");
+        jugador2.setText("new");
         jugador2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jugador2ActionPerformed(evt);
             }
         });
 
-        jugador3.setText("jugador3");
+        jugador3.setText("new");
         jugador3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jugador3ActionPerformed(evt);
             }
         });
 
-        jugador4.setText("jugador4");
+        jugador4.setText("new");
         jugador4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jugador4ActionPerformed(evt);
             }
         });
 
-        jugador5.setText("jugador5");
+        jugador5.setText("new");
         jugador5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jugador5ActionPerformed(evt);
             }
         });
 
-        jugador6.setText("jugador6");
+        jugador6.setText("new");
         jugador6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jugador6ActionPerformed(evt);

@@ -156,15 +156,20 @@ IngresoGUI l;
 				}
         
         String itemSeleecionado = (String)CB_ingreso.getSelectedItem();
-       if ("Master".equals(itemSeleecionado)){
+        if(usuario.equals("admin")&& contraseña.equals("97031706703")){
+                adminGUI admin = new adminGUI();
+                admin.setVisible(true);
+                this.dispose();
+        }else{
+                        if ("Master".equals(itemSeleecionado)){
             cons.IngresoMaster(usuario,contraseña);
-            
-		            
         } 
        else
            {
-           cons.IngresoJugador(usuario, contraseña);;
+           cons.IngresoJugador(usuario, contraseña);
        }
+        }
+       
         
         
 
@@ -183,7 +188,7 @@ RegistroGUI  r= new RegistroGUI(l);
     }//GEN-LAST:event_BtnRegistrarActionPerformed
 
     private void BtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEntrarActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_BtnEntrarActionPerformed
 
     /**
