@@ -5,7 +5,9 @@
  */
 package businesLogic;
 
+import GUI.mostrarHabilidades;
 import GUI.mostrarItems;
+import data.Habilidad;
 import data.Items;
 import java.util.ArrayList;
 
@@ -32,6 +34,13 @@ public class CreacionDeObjetos {
         }
         return listaObjetos;
         
+    }
+
+    public void mostarHabilidades() {
+        mostrarHabilidades cons = new mostrarHabilidades();
+        Habilidad constructor = new Habilidad();
+        cons.setItemsDeLista(constructor.leerListaHabilidades());
+        cons.setVisible(true);
     }
 
     

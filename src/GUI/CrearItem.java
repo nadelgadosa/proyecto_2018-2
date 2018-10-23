@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import data.Habilidad;
 import data.Items;
 import javax.swing.JOptionPane;
 
@@ -247,4 +248,6 @@ public class CrearItem extends javax.swing.JFrame {
         level.setText(Integer.toString(aux.getModificador()));
        
     }
+
+    
 }

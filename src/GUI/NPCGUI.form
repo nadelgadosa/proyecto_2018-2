@@ -327,60 +327,22 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="CB_Objeto1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="CB_Objeto2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="CB_Objeto3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="CB_Objeto4" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                   <Component id="jLabel11" min="-2" pref="103" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="280" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="CB_Objeto1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="CB_Objeto2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="CB_Objeto3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="CB_Objeto4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="36" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JCheckBox" name="CB_Objeto1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Objeto1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="CB_Objeto2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Objeto 2"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="CB_Objeto3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Objeto 3"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="CB_Objeto4">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Objeto 4"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -405,52 +367,22 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="CB_Habilidad1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="CB_Habilidad2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="CB_Habilidad3" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="379" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="CB_Habilidad1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="CB_Habilidad2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="CB_Habilidad3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JCheckBox" name="CB_Habilidad1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="habilidad 1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="CB_Habilidad2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Habilidad 2"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="CB_Habilidad3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Habilidad 3"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">

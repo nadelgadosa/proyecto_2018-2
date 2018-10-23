@@ -3,7 +3,6 @@ package businesLogic;
 
 import GUI.Game;
 import GUI.MasterGUI;
-import GUI.NewGame;
 import GUI.NewGameFrame;
 
 import data.Items;

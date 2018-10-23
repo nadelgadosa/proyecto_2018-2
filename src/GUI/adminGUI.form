@@ -112,6 +112,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="crear habilidad"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="crearHabilidadActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="crearMonstruo">
       <Properties>
@@ -143,6 +146,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="ver habilidades"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verHabilidadesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="verMapas">
       <Properties>

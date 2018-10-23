@@ -2,3 +2,4 @@ cinturon
 escudo
 pocion de vida
 lanza
+medallon

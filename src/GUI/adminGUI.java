@@ -51,6 +51,11 @@ public class adminGUI extends javax.swing.JFrame {
         crearMapa.setText("crear mapa");
 
         crearHabilidad.setText("crear habilidad");
+        crearHabilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearHabilidadActionPerformed(evt);
+            }
+        });
 
         crearMonstruo.setText("crear monstruo");
 
@@ -71,6 +76,11 @@ public class adminGUI extends javax.swing.JFrame {
         });
 
         verHabilidades.setText("ver habilidades");
+        verHabilidades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verHabilidadesActionPerformed(evt);
+            }
+        });
 
         verMapas.setText("ver mapas");
 
@@ -151,6 +161,19 @@ public class adminGUI extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_verItemsActionPerformed
+
+    private void crearHabilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearHabilidadActionPerformed
+        CrearHabilidad cons = new CrearHabilidad();
+        cons.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_crearHabilidadActionPerformed
+
+    private void verHabilidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verHabilidadesActionPerformed
+        CreacionDeObjetos cons = new CreacionDeObjetos();
+        cons.mostarHabilidades();
+        this.dispose();
+        
+    }//GEN-LAST:event_verHabilidadesActionPerformed
 
     /**
      * @param args the command line arguments

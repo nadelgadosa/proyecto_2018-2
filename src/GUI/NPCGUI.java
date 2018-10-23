@@ -55,15 +55,8 @@ public class NPCGUI extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         Txt_Iniciativa = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        CB_Objeto1 = new javax.swing.JCheckBox();
-        CB_Objeto2 = new javax.swing.JCheckBox();
-        CB_Objeto3 = new javax.swing.JCheckBox();
-        CB_Objeto4 = new javax.swing.JCheckBox();
         jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        CB_Habilidad1 = new javax.swing.JCheckBox();
-        CB_Habilidad2 = new javax.swing.JCheckBox();
-        CB_Habilidad3 = new javax.swing.JCheckBox();
         jLabel12 = new javax.swing.JLabel();
         Btn_CrearNpc = new javax.swing.JButton();
 
@@ -212,14 +205,6 @@ public class NPCGUI extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Objetos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 102, 102))); // NOI18N
 
-        CB_Objeto1.setText("Objeto1");
-
-        CB_Objeto2.setText("Objeto 2");
-
-        CB_Objeto3.setText("Objeto 3");
-
-        CB_Objeto4.setText("Objeto 4");
-
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/item.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -227,40 +212,18 @@ public class NPCGUI extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CB_Objeto1)
-                    .addComponent(CB_Objeto2)
-                    .addComponent(CB_Objeto3)
-                    .addComponent(CB_Objeto4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(79, 79, 79)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(280, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(CB_Objeto1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CB_Objeto2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CB_Objeto3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CB_Objeto4)
-                .addContainerGap(36, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel11)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 147, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Habilidades", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 102, 102))); // NOI18N
-
-        CB_Habilidad1.setText("habilidad 1");
-
-        CB_Habilidad2.setText("Habilidad 2");
-
-        CB_Habilidad3.setText("Habilidad 3");
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/skill.png"))); // NOI18N
 
@@ -269,28 +232,15 @@ public class NPCGUI extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CB_Habilidad1)
-                    .addComponent(CB_Habilidad2)
-                    .addComponent(CB_Habilidad3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(83, 83, 83)
                 .addComponent(jLabel12)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(379, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(CB_Habilidad1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CB_Habilidad2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CB_Habilidad3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel12)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 100, Short.MAX_VALUE))
         );
 
         Btn_CrearNpc.setText("Crear NPC");
@@ -368,13 +318,6 @@ public class NPCGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_CrearNpc;
-    private javax.swing.JCheckBox CB_Habilidad1;
-    private javax.swing.JCheckBox CB_Habilidad2;
-    private javax.swing.JCheckBox CB_Habilidad3;
-    private javax.swing.JCheckBox CB_Objeto1;
-    private javax.swing.JCheckBox CB_Objeto2;
-    private javax.swing.JCheckBox CB_Objeto3;
-    private javax.swing.JCheckBox CB_Objeto4;
     private javax.swing.JLabel LabelName;
     private javax.swing.JLabel Lbl_Fuerza;
     private javax.swing.JLabel Lbl_Raza;
