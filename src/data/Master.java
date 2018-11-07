@@ -11,6 +11,7 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -251,46 +252,25 @@ public class Master extends Usuario {
         
     }
        
-    public void actualizarLista (String usuario, String ruta, String nombreJuego){
-         File outFile = new File (ruta+".txt");
-         String[] aux= new String[3];
-         String juego1, juego2, juego3;
-         aux = listaDeJuegos(usuario);
-         juego1 = aux[0];
-         juego2 = aux[1];
-         juego3 = aux[2];
-         try {
-            
-            PrintWriter pW = new PrintWriter(outFile);
-            if(juego1 != null){
-               pW.println(juego1);
-               
-               if(juego2!= null){
-                   pW.println(juego2);
-                   
-                   if(juego3 != null){
-                       pW.println(juego3);
-                       
-                   }else{
-                       pW.println(nombreJuego); 
-                   }
-                   
-               }else{
-                   pW.println(nombreJuego); 
-               }
-               
-            }else{
-              pW.println(nombreJuego);  
+    public void actualizarLista (String usuario, String ruta, String nombre){
+             ArrayList lista = new ArrayList();
+        try {
+            Scanner sc = new Scanner(new File(ruta+".txt"));
+            while(sc.hasNext()){
+                lista.add(sc.nextLine());
             }
             
-            
-            
-            
-            pW.close();
-            System.out.println("se actualizo el .txt");
-        } catch (IOException ex) {
-            Logger.getLogger(Master.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            lista.add(nombre);
+            File outFile = new File(ruta+".txt");
+            PrintWriter pw = new PrintWriter(outFile);
+            for (int i = 0; i < lista.size(); i++) {
+                
+                pw.println(lista.get(i));
+            }
+            pw.close();
+        } catch (Exception e) {
+        }  
+         
     }   
        
      

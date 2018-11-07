@@ -35,6 +35,7 @@ public class mostrarHabilidades extends javax.swing.JFrame {
         Habilidades = new javax.swing.JList<>();
         detalles = new javax.swing.JButton();
         editar = new javax.swing.JButton();
+        volver2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +60,13 @@ public class mostrarHabilidades extends javax.swing.JFrame {
             }
         });
 
+        volver2.setText("volver");
+        volver2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volver2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,7 +78,9 @@ public class mostrarHabilidades extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(detalles)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
+                .addComponent(volver2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(editar)
                 .addGap(68, 68, 68))
         );
@@ -82,7 +92,8 @@ public class mostrarHabilidades extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(detalles)
-                    .addComponent(editar))
+                    .addComponent(editar)
+                    .addComponent(volver2))
                 .addGap(21, 21, 21))
         );
 
@@ -113,6 +124,12 @@ public class mostrarHabilidades extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_editarActionPerformed
+
+    private void volver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver2ActionPerformed
+        adminGUI cons= new adminGUI();
+        cons.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_volver2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,6 +171,9 @@ public class mostrarHabilidades extends javax.swing.JFrame {
     private javax.swing.JButton detalles;
     private javax.swing.JButton editar;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton volver;
+    private javax.swing.JButton volver1;
+    private javax.swing.JButton volver2;
     // End of variables declaration//GEN-END:variables
 
     

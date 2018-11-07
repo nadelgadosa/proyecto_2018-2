@@ -377,7 +377,7 @@ String constructor = new String();
         Vitacora vitacoras [];
         Maps mapas[];
 
-        // asignacion para monstruos, se necesita una lista de chekboxes
+        
         mons= null;
         nombre = nombreJuego.getText();
         historia = tAHistoria.getText();

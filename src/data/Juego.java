@@ -61,6 +61,7 @@ public class Juego implements Serializable{
         
         return bool;
     }
+    
      public Juego leerObjetoJuego(String nombreObjeto){
         Juego objeto = new Juego();
       try{

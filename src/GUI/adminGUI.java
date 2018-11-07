@@ -47,6 +47,11 @@ public class adminGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         crearNPC.setText("crear NPC");
+        crearNPC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearNPCActionPerformed(evt);
+            }
+        });
 
         crearMapa.setText("crear mapa");
 
@@ -174,6 +179,18 @@ public class adminGUI extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_verHabilidadesActionPerformed
+
+    private void crearNPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearNPCActionPerformed
+        
+        CrearNPC cons = new CrearNPC(); 
+        
+        CreacionDeObjetos constructor = new CreacionDeObjetos();
+        
+        constructor.llenarListas();
+        
+        this.dispose();
+        
+    }//GEN-LAST:event_crearNPCActionPerformed
 
     /**
      * @param args the command line arguments

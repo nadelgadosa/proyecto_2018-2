@@ -5,10 +5,12 @@
  */
 package businesLogic;
 
+import GUI.CrearNPC;
 import GUI.mostrarHabilidades;
 import GUI.mostrarItems;
 import data.Habilidad;
 import data.Items;
+import data.Personaje;
 import java.util.ArrayList;
 
 /**
@@ -42,6 +44,19 @@ public class CreacionDeObjetos {
         cons.setItemsDeLista(constructor.leerListaHabilidades());
         cons.setVisible(true);
     }
+
+   
+
+    public void llenarListas() {
+        CrearNPC cons = new CrearNPC();
+        Items constructorItems = new Items();
+        cons.setItemsDeListaNPCs(constructorItems.leerListaItems());
+        Habilidad constructorHabilidad = new Habilidad();
+        cons.setHabilidadesDeLista(constructorHabilidad.leerListaHabilidades());
+        cons.setVisible(true);
+    }
+
+    
 
     
     

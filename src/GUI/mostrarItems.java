@@ -35,6 +35,7 @@ public class mostrarItems extends javax.swing.JFrame {
         items = new javax.swing.JList<>();
         editar = new javax.swing.JButton();
         detalles = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +60,13 @@ public class mostrarItems extends javax.swing.JFrame {
             }
         });
 
+        volver.setText("volver");
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,7 +78,9 @@ public class mostrarItems extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(detalles)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
+                .addComponent(volver)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(editar)
                 .addGap(57, 57, 57))
         );
@@ -82,7 +92,8 @@ public class mostrarItems extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editar)
-                    .addComponent(detalles))
+                    .addComponent(detalles)
+                    .addComponent(volver))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -112,6 +123,12 @@ public class mostrarItems extends javax.swing.JFrame {
         cons.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_editarActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        adminGUI cons= new adminGUI();
+        cons.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,5 +176,10 @@ public class mostrarItems extends javax.swing.JFrame {
     private javax.swing.JButton editar;
     private javax.swing.JList<String> items;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton volver;
+    private javax.swing.JButton volver2;
+    private javax.swing.JButton volver3;
+    private javax.swing.JButton volver4;
+    private javax.swing.JButton volver5;
     // End of variables declaration//GEN-END:variables
 }

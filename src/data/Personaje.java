@@ -6,9 +6,12 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Personaje implements Serializable{
    private String nombre, clase, raza, trasfondo, personalidad, juego;
+   
    private int nivel, xpPoints, heallPoints, iniciativa, fuerza, inteligencia, carisma, destreza, sabiduria, velocidad, armadura;
    private Items equipo [], objetos [];
    private Habilidad[] habilidades= new Habilidad[2] ;
@@ -79,7 +82,21 @@ public class Personaje implements Serializable{
       return objeto;
     }
     
-    
+    public ArrayList<String> leerListaNPCs() {
+        ArrayList<String> listaNombres = new ArrayList();
+        try {
+            Scanner sc = new Scanner(new File("data\\NPCs\\NPCs.txt"));
+             while(sc.hasNext()){
+                listaNombres.add(sc.nextLine());
+             }
+                
+            }catch(Exception e){
+                System.out.println(e);
+            }
+        return listaNombres;
+        
+    }
+     
     
     
     
@@ -226,5 +243,24 @@ public class Personaje implements Serializable{
     }
     public void setHabilidadesEspeciales(Habilidad habilidadesEspeciales, int numeroDeHabilidad) {
         this.habilidadesEspeciales [numeroDeHabilidad] = habilidadesEspeciales;
+    }
+
+    public void NPC(String name, String classs, String race, int level, int xpPoints, int life, int iniciative, int strong, int inteligence, int charm, int dexterity, int wisdom, int speed, int armor, Items[] objetos, Habilidad[] habilidades) {
+        this.nombre = name;
+        this.clase = classs;
+        this.raza = race;
+        this.nivel = level;
+        this.xpPoints = xpPoints;
+        this.heallPoints = life;
+        this.iniciativa = iniciative;
+        this.fuerza = strong;
+        this.inteligencia = inteligence;
+        this.carisma = charm;
+        this.destreza = dexterity;
+        this.sabiduria = wisdom;
+        this.velocidad = speed;
+        this.armadura = armor;
+        this.objetos = objetos;
+        this.habilidades = habilidades;
     }
 }
