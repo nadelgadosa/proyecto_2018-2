@@ -132,7 +132,8 @@ public class CrearHabilidad extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
-       this.nombre = name.getText();
+        System.out.println("");
+        this.nombre = name.getText();
        this.descripcion = description.getText();
        this.modificador = Integer.parseInt(modificator.getText());
        this.NoUsos = Integer.parseInt(uses.getText());
