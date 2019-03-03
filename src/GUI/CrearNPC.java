@@ -19,10 +19,10 @@ public class CrearNPC extends javax.swing.JFrame {
 
    private String name, classs, race;
    private int level, xpPoints, life, iniciative, strong, inteligence, charm, dexterity, wisdom, speed, armor;
-   private Items equipo [], objetos [];
    private Habilidad[] habilidades= new Habilidad[2] ;
-    
-    
+   private ArrayList <String> objetos1 = new ArrayList <String>();
+   private ArrayList <String> habilidad1 = new ArrayList <String>();
+   private Items objetos[]; 
     
     
     
@@ -259,6 +259,11 @@ public class CrearNPC extends javax.swing.JFrame {
         });
 
         quitarItem.setText("quitar");
+        quitarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitarItemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -281,14 +286,14 @@ public class CrearNPC extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(detallesItem)
-                        .addGap(77, 77, 77)
+                        .addGap(91, 91, 91)
                         .addComponent(agregarItem)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(quitarItem))
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2))
+                    .addComponent(jScrollPane1))
                 .addContainerGap())
         );
 
@@ -311,8 +316,18 @@ public class CrearNPC extends javax.swing.JFrame {
         });
 
         agregarHabilidad.setText("agregar");
+        agregarHabilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarHabilidadActionPerformed(evt);
+            }
+        });
 
         quitarHabilidad.setText("quitar");
+        quitarHabilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitarHabilidadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -384,7 +399,7 @@ public class CrearNPC extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(crearNPC)
                     .addComponent(volver1))
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -442,15 +457,94 @@ public class CrearNPC extends javax.swing.JFrame {
 
     private void agregarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarItemActionPerformed
         String name = null;
-        int index;
+        String [] lista;
+        lista = new String [5] ;
         name = listaObjetos.getSelectedValue();
-
         Items aux = new Items();
         aux = aux.leerObjetoItem(name);
-        String [] lista = new String [10];
-        index = listaObjetos.getSelectedIndex();
-       
+        if(objetos1.size()>4)    {
+            JOptionPane.showMessageDialog(rootPane, "maximo 5 items iniciales");
+            itemsAgregados.setListData(lista);
+            for (int i=0; i<=4 ; i++) {
+                lista [i] = objetos1.get(i).toString();
+            }
+        }else
+            objetos1.add(aux.getNombre());
+        for (int i=0; i<=objetos1.size()-1 ; i++) {   
+                lista [i] = objetos1.get(i);
+        }
+        itemsAgregados.setListData(lista);  
     }//GEN-LAST:event_agregarItemActionPerformed
+
+    private void quitarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitarItemActionPerformed
+        String [] lista;
+        lista = new String [5] ;
+        for (int i = 0; i < objetos1.size() ; i++) {   
+            if(itemsAgregados.getSelectedValue().equals(objetos1.get(i))){
+                System.out.println(objetos1.size());
+                for (int j = i; j < objetos1.size()-1; j++) {
+                lista[j] = objetos1.get(j+1);    
+                }
+                ArrayList <String> aux = new ArrayList <String>();
+                for (int j = 0; j < objetos1.size()-1; j++) {
+                        aux.add(lista[j]);
+                        System.out.println(lista[j]);
+                    }
+                objetos1 = aux;
+                itemsAgregados.setListData(lista);
+            }else
+                lista[i] = objetos1.get(i);
+                }
+    }//GEN-LAST:event_quitarItemActionPerformed
+
+    private void agregarHabilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarHabilidadActionPerformed
+        String name = null;
+        String [] lista;
+        lista = new String [3] ;
+        System.out.println("1");
+        name = listaHabilidades.getSelectedValue();
+        System.out.println("2");
+        Habilidad aux = new Habilidad();
+        System.out.println("3");
+        aux = aux.leerObjetoHabilidad(name);
+        if(habilidad1.size()>2)    {
+            JOptionPane.showMessageDialog(rootPane, "maximo 3 habilidades iniciales");
+            habilidadesAgregadas.setListData(lista);
+            for (int i=0; i<=2 ; i++) {
+                lista [i] = habilidad1.get(i).toString();
+            }
+        }else
+            habilidad1.add(aux.getNombre());
+        for (int i=0; i<=habilidad1.size()-1 ; i++) {   
+                System.out.println("4.1");
+                System.out.println("4.2");
+                lista [i] = habilidad1.get(i);
+                System.out.println("4.3");
+        }
+        System.out.println("5");
+        habilidadesAgregadas.setListData(lista);        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarHabilidadActionPerformed
+
+    private void quitarHabilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitarHabilidadActionPerformed
+        String [] lista;
+        lista = new String [5] ;
+        for (int i = 0; i < habilidad1.size() ; i++) {   
+            if(habilidadesAgregadas.getSelectedValue().equals(habilidad1.get(i))){
+                System.out.println(habilidad1.size());
+                for (int j = i; j < habilidad1.size()-1; j++) {
+                lista[j] = habilidad1.get(j+1);    
+                }
+                ArrayList <String> aux = new ArrayList <String>();
+                for (int j = 0; j < habilidad1.size()-1; j++) {
+                        aux.add(lista[j]);
+                        System.out.println(lista[j]);
+                    }
+                habilidad1 = aux;
+                habilidadesAgregadas.setListData(lista);
+            }else
+                lista[i] = habilidad1.get(i);
+                }        // TODO add your handling code here:
+    }//GEN-LAST:event_quitarHabilidadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -534,7 +628,6 @@ public class CrearNPC extends javax.swing.JFrame {
     private javax.swing.JTextField sabiduria;
     private javax.swing.JTextField velocidad;
     private javax.swing.JTextField vida;
-    private javax.swing.JButton volver;
     private javax.swing.JButton volver1;
     // End of variables declaration//GEN-END:variables
 
