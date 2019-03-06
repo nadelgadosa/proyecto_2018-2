@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import businesLogic.CreacionDeObjetos;
 import data.Habilidad;
 import data.Items;
 import data.Personaje;
@@ -19,10 +20,10 @@ public class CrearNPC extends javax.swing.JFrame {
 
    private String name, classs, race;
    private int level, xpPoints, life, iniciative, strong, inteligence, charm, dexterity, wisdom, speed, armor;
-   private Habilidad[] habilidades= new Habilidad[2] ;
+   private Habilidad[] habilidades= new Habilidad[3] ;
    private ArrayList <String> objetos1 = new ArrayList <String>();
    private ArrayList <String> habilidad1 = new ArrayList <String>();
-   private Items objetos[]; 
+   private Items objetos[] = new Items [5]; 
     
     
     
@@ -412,8 +413,6 @@ public class CrearNPC extends javax.swing.JFrame {
     }//GEN-LAST:event_volver1ActionPerformed
 
     private void crearNPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearNPCActionPerformed
-        
-        Personaje constructor = new Personaje();
         this.name = nombre.getText();
         this.classs = clase.getText();
         this.race = raza.getText();
@@ -428,7 +427,15 @@ public class CrearNPC extends javax.swing.JFrame {
         this.wisdom = Integer.parseInt(sabiduria.getText());
         this.speed = Integer.parseInt(velocidad.getText());
         this.armor = Integer.parseInt(armadura.getText());
-        constructor.NPC(name,classs,race,level,xpPoints,life,iniciative,strong,inteligence,charm,dexterity,wisdom,speed,armor,objetos,habilidades);
+        asignarObjetos(objetos1);
+        asignarHabilidades(habilidad1);
+        CreacionDeObjetos buss = new CreacionDeObjetos ();
+        if(buss.crearObjetosNPC(name, classs, race, level, xpPoints, life, iniciative, strong, inteligence, charm, dexterity, wisdom, speed, armor, objetos, habilidades)){
+            JOptionPane.showMessageDialog(rootPane, "el personaje ha sido creado");
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "el personaje no ha sido creado");
+        }
+        
         
         
     }//GEN-LAST:event_crearNPCActionPerformed
@@ -446,12 +453,9 @@ public class CrearNPC extends javax.swing.JFrame {
 
     private void detallesHabilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detallesHabilidadActionPerformed
        String message = null;
-        
         message = listaHabilidades.getSelectedValue();
-
         Habilidad aux = new Habilidad();
         aux = aux.leerObjetoHabilidad(message);
-        
         JOptionPane.showMessageDialog(rootPane, aux.toString());
     }//GEN-LAST:event_detallesHabilidadActionPerformed
 
@@ -481,14 +485,12 @@ public class CrearNPC extends javax.swing.JFrame {
         lista = new String [5] ;
         for (int i = 0; i < objetos1.size() ; i++) {   
             if(itemsAgregados.getSelectedValue().equals(objetos1.get(i))){
-                System.out.println(objetos1.size());
                 for (int j = i; j < objetos1.size()-1; j++) {
                 lista[j] = objetos1.get(j+1);    
                 }
                 ArrayList <String> aux = new ArrayList <String>();
                 for (int j = 0; j < objetos1.size()-1; j++) {
                         aux.add(lista[j]);
-                        System.out.println(lista[j]);
                     }
                 objetos1 = aux;
                 itemsAgregados.setListData(lista);
@@ -501,11 +503,8 @@ public class CrearNPC extends javax.swing.JFrame {
         String name = null;
         String [] lista;
         lista = new String [3] ;
-        System.out.println("1");
         name = listaHabilidades.getSelectedValue();
-        System.out.println("2");
         Habilidad aux = new Habilidad();
-        System.out.println("3");
         aux = aux.leerObjetoHabilidad(name);
         if(habilidad1.size()>2)    {
             JOptionPane.showMessageDialog(rootPane, "maximo 3 habilidades iniciales");
@@ -515,13 +514,9 @@ public class CrearNPC extends javax.swing.JFrame {
             }
         }else
             habilidad1.add(aux.getNombre());
-        for (int i=0; i<=habilidad1.size()-1 ; i++) {   
-                System.out.println("4.1");
-                System.out.println("4.2");
+        for (int i=0; i<=habilidad1.size()-1 ; i++) {
                 lista [i] = habilidad1.get(i);
-                System.out.println("4.3");
         }
-        System.out.println("5");
         habilidadesAgregadas.setListData(lista);        // TODO add your handling code here:
     }//GEN-LAST:event_agregarHabilidadActionPerformed
 
@@ -646,4 +641,40 @@ public class CrearNPC extends javax.swing.JFrame {
         }
         this.listaHabilidades.setListData(lista);
     }
+
+    private void asignarObjetos(ArrayList<String> objetos1) {
+        Items aux[] = new Items [5];
+        Items cons = new Items();
+        for (int i = 0; i < objetos1.size(); i++) {
+            aux[i]=cons.leerObjetoItem(objetos1.get(i));
+        }
+        setObjetos(aux);
+    }
+    
+    private void asignarHabilidades(ArrayList<String> habilidad1) {
+        Habilidad aux[] = new Habilidad [5];
+        Habilidad cons = new Habilidad();
+        for (int i = 0; i < 3; i++) {
+            aux[i]=cons.leerObjetoHabilidad(habilidad1.get(i));
+        }
+        setHabilidades(aux);
+    }
+
+    public Habilidad[] getHabilidades() {
+        return habilidades;
+    }
+
+    public void setHabilidades(Habilidad[] habilidades) {
+        this.habilidades = habilidades;
+    }
+
+    public Items[] getObjetos() {
+        return objetos;
+    }
+
+    public void setObjetos(Items[] objetos) {
+        this.objetos = objetos;
+    }
+    
+    
 }
