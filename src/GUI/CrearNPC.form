@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="268" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel2" max="32767" attributes="0"/>
@@ -97,7 +97,7 @@
                       <Component id="nombre" max="32767" attributes="0"/>
                       <Component id="clase" alignment="0" max="32767" attributes="0"/>
                       <Component id="raza" alignment="0" max="32767" attributes="0"/>
-                      <Component id="vida" alignment="0" max="32767" attributes="0"/>
+                      <Component id="vida" alignment="0" pref="162" max="32767" attributes="0"/>
                       <Component id="nivel" alignment="0" max="32767" attributes="0"/>
                       <Component id="velocidad" alignment="0" max="32767" attributes="0"/>
                       <Component id="armadura" alignment="0" max="32767" attributes="0"/>
@@ -107,8 +107,9 @@
                       <Component id="destreza" alignment="0" max="32767" attributes="0"/>
                       <Component id="sabiduria" alignment="0" max="32767" attributes="0"/>
                       <Component id="iniciativa" alignment="0" max="32767" attributes="0"/>
-                      <Component id="experiencia" alignment="0" pref="162" max="32767" attributes="0"/>
+                      <Component id="experiencia" alignment="0" max="32767" attributes="0"/>
                   </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -262,32 +263,106 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="nombre">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombreKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="clase">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="claseKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="raza">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="razaKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="vida">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="vidaActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vidaKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="nivel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nivelKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="velocidad">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="velocidadKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="armadura">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="armaduraActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="armaduraKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="fuerza">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="fuerzaKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="inteligencia">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="inteligenciaKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="carisma">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="carismaKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="destreza">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="destrezaKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="sabiduria">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sabiduriaKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="iniciativa">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="iniciativaKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="experiencia">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="experienciaKeyTyped"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

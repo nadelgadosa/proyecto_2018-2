@@ -5,6 +5,12 @@
  */
 package GUI;
 
+import businesLogic.CreacionDeObjetos;
+import data.Habilidad;
+import data.Items;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Ana
@@ -27,22 +33,740 @@ public class CrearMonstruo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaObjetos = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        itemsAgregados = new javax.swing.JList<>();
+        detallesItem = new javax.swing.JButton();
+        agregarItem = new javax.swing.JButton();
+        quitarItem = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listaHabilidades = new javax.swing.JList<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        habilidadesAgregadas = new javax.swing.JList<>();
+        detallesHabilidad = new javax.swing.JButton();
+        agregarHabilidad = new javax.swing.JButton();
+        quitarHabilidad = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        nombre2 = new javax.swing.JTextField();
+        clase2 = new javax.swing.JTextField();
+        raza2 = new javax.swing.JTextField();
+        vida2 = new javax.swing.JTextField();
+        nivel2 = new javax.swing.JTextField();
+        velocidad2 = new javax.swing.JTextField();
+        armadura2 = new javax.swing.JTextField();
+        fuerza2 = new javax.swing.JTextField();
+        inteligencia2 = new javax.swing.JTextField();
+        carisma2 = new javax.swing.JTextField();
+        destreza2 = new javax.swing.JTextField();
+        sabiduria2 = new javax.swing.JTextField();
+        iniciativa2 = new javax.swing.JTextField();
+        experiencia2 = new javax.swing.JTextField();
+        crearMonstruo = new javax.swing.JButton();
+        volver1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("items"));
+
+        listaObjetos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(listaObjetos);
+
+        jScrollPane2.setViewportView(itemsAgregados);
+
+        detallesItem.setText("detalles");
+        detallesItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                detallesItemActionPerformed(evt);
+            }
+        });
+
+        agregarItem.setText("agregar");
+        agregarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarItemActionPerformed(evt);
+            }
+        });
+
+        quitarItem.setText("quitar");
+        quitarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitarItemActionPerformed(evt);
+            }
+        });
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("habilidades"));
+
+        listaHabilidades.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(listaHabilidades);
+
+        jScrollPane4.setViewportView(habilidadesAgregadas);
+
+        detallesHabilidad.setText("detalles");
+        detallesHabilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                detallesHabilidadActionPerformed(evt);
+            }
+        });
+
+        agregarHabilidad.setText("agregar");
+        agregarHabilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarHabilidadActionPerformed(evt);
+            }
+        });
+
+        quitarHabilidad.setText("quitar");
+        quitarHabilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitarHabilidadActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(agregarHabilidad)
+                    .addComponent(detallesHabilidad)
+                    .addComponent(quitarHabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(detallesHabilidad)
+                        .addGap(77, 77, 77)
+                        .addComponent(agregarHabilidad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(quitarHabilidad))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(detallesItem, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(agregarItem, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(quitarItem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(detallesItem)
+                        .addGap(83, 83, 83)
+                        .addComponent(agregarItem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(quitarItem))
+                    .addComponent(jScrollPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("monstruo"));
+
+        jLabel29.setText("vida");
+
+        jLabel30.setText("nombre");
+
+        jLabel31.setText("clase");
+
+        jLabel32.setText("raza");
+
+        jLabel33.setText("nivel");
+
+        jLabel34.setText("velocidad");
+
+        jLabel35.setText("armadura");
+
+        jLabel36.setText("fuerza");
+
+        jLabel37.setText("inteligencia");
+
+        jLabel38.setText("carisma");
+
+        jLabel39.setText("destreza");
+
+        jLabel40.setText("sabiduria");
+
+        jLabel41.setText("iniciativa");
+
+        jLabel42.setText("xp");
+
+        nombre2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nombre2KeyTyped(evt);
+            }
+        });
+
+        clase2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                clase2KeyTyped(evt);
+            }
+        });
+
+        raza2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                raza2KeyTyped(evt);
+            }
+        });
+
+        vida2.setText("0");
+        vida2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                vida2KeyTyped(evt);
+            }
+        });
+
+        nivel2.setText("0");
+        nivel2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nivel2KeyTyped(evt);
+            }
+        });
+
+        velocidad2.setText("0");
+        velocidad2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                velocidad2KeyTyped(evt);
+            }
+        });
+
+        armadura2.setText("0");
+        armadura2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                armadura2KeyTyped(evt);
+            }
+        });
+
+        fuerza2.setText("0");
+        fuerza2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fuerza2KeyTyped(evt);
+            }
+        });
+
+        inteligencia2.setText("0");
+        inteligencia2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inteligencia2KeyTyped(evt);
+            }
+        });
+
+        carisma2.setText("0");
+        carisma2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                carisma2KeyTyped(evt);
+            }
+        });
+
+        destreza2.setText("0");
+        destreza2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                destreza2KeyTyped(evt);
+            }
+        });
+
+        sabiduria2.setText("0");
+        sabiduria2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sabiduria2KeyTyped(evt);
+            }
+        });
+
+        iniciativa2.setText("0");
+        iniciativa2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                iniciativa2KeyTyped(evt);
+            }
+        });
+
+        experiencia2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                experiencia2KeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel36)
+                    .addComponent(jLabel37)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel40)
+                    .addComponent(jLabel41)
+                    .addComponent(jLabel42))
+                .addGap(41, 41, 41)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(nombre2)
+                    .addComponent(clase2)
+                    .addComponent(raza2)
+                    .addComponent(vida2, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                    .addComponent(nivel2)
+                    .addComponent(velocidad2)
+                    .addComponent(armadura2)
+                    .addComponent(fuerza2)
+                    .addComponent(inteligencia2)
+                    .addComponent(carisma2)
+                    .addComponent(destreza2)
+                    .addComponent(sabiduria2)
+                    .addComponent(iniciativa2)
+                    .addComponent(experiencia2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(nombre2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(clase2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(raza2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(vida2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(nivel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(velocidad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(armadura2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(fuerza2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(inteligencia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(carisma2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(destreza2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel40)
+                    .addComponent(sabiduria2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(iniciativa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel42)
+                    .addComponent(experiencia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        crearMonstruo.setText("crear Monstruo");
+        crearMonstruo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearMonstruoActionPerformed(evt);
+            }
+        });
+
+        volver1.setText("volver");
+        volver1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volver1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(crearMonstruo)
+                .addGap(181, 181, 181)
+                .addComponent(volver1)
+                .addGap(328, 328, 328))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(crearMonstruo)
+                    .addComponent(volver1))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private String name, classs, race;
+   private int level, xpPoints, life, iniciative, strong, inteligence, charm, dexterity, wisdom, speed, armor;
+   private Habilidad[] habilidades= new Habilidad[3] ;
+   private ArrayList <String> objetos1 = new ArrayList <String>();
+   private ArrayList <String> habilidad1 = new ArrayList <String>();
+   private Items objetos[] = new Items [5];
+    
+    
+    
+    
+    
+    
+    
+    private void detallesItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detallesItemActionPerformed
+        String message = null;
+        message = listaObjetos.getSelectedValue();
+        Items aux = new Items();
+        aux = aux.leerObjetoItem(message);
+        JOptionPane.showMessageDialog(rootPane, aux.toString());
+    }//GEN-LAST:event_detallesItemActionPerformed
 
+    private void agregarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarItemActionPerformed
+        String name = null;
+        String [] lista;
+        lista = new String [4] ;
+        name = listaObjetos.getSelectedValue();
+        Items aux = new Items();
+        aux = aux.leerObjetoItem(name);
+        if(objetos1.size()>3)    {
+            JOptionPane.showMessageDialog(rootPane, "maximo 4 items");
+            itemsAgregados.setListData(lista);
+            for (int i=0; i<=3 ; i++) {
+                lista [i] = objetos1.get(i).toString();
+            }
+        }else
+        objetos1.add(aux.getNombre());
+        for (int i=0; i<=objetos1.size()-1 ; i++) {
+            lista [i] = objetos1.get(i);
+        }
+        itemsAgregados.setListData(lista);
+    }//GEN-LAST:event_agregarItemActionPerformed
+
+    private void quitarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitarItemActionPerformed
+        String [] lista;
+        lista = new String [4] ;
+        for (int i = 0; i < objetos1.size() ; i++) {
+            if(itemsAgregados.getSelectedValue().equals(objetos1.get(i))){
+                for (int j = i; j < objetos1.size()-1; j++) {
+                    lista[j] = objetos1.get(j+1);
+                }
+                ArrayList <String> aux = new ArrayList <String>();
+                for (int j = 0; j < objetos1.size()-1; j++) {
+                    aux.add(lista[j]);
+                }
+                objetos1 = aux;
+                itemsAgregados.setListData(lista);
+            }else
+            lista[i] = objetos1.get(i);
+        }
+    }//GEN-LAST:event_quitarItemActionPerformed
+
+    private void detallesHabilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detallesHabilidadActionPerformed
+        String message = null;
+        message = listaHabilidades.getSelectedValue();
+        Habilidad aux = new Habilidad();
+        aux = aux.leerObjetoHabilidad(message);
+        JOptionPane.showMessageDialog(rootPane, aux.toString());
+    }//GEN-LAST:event_detallesHabilidadActionPerformed
+
+    private void agregarHabilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarHabilidadActionPerformed
+        String name = null;
+        String [] lista;
+        lista = new String [3] ;
+        name = listaHabilidades.getSelectedValue();
+        Habilidad aux = new Habilidad();
+        aux = aux.leerObjetoHabilidad(name);
+        if(habilidad1.size()>2)    {
+            JOptionPane.showMessageDialog(rootPane, "maximo 3 habilidades iniciales");
+            habilidadesAgregadas.setListData(lista);
+            for (int i=0; i<=2 ; i++) {
+                lista [i] = habilidad1.get(i).toString();
+            }
+        }else
+        habilidad1.add(aux.getNombre());
+        for (int i=0; i<=habilidad1.size()-1 ; i++) {
+            lista [i] = habilidad1.get(i);
+        }
+        habilidadesAgregadas.setListData(lista);        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarHabilidadActionPerformed
+
+    private void quitarHabilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitarHabilidadActionPerformed
+        String [] lista;
+        lista = new String [5] ;
+        for (int i = 0; i < habilidad1.size() ; i++) {
+            if(habilidadesAgregadas.getSelectedValue().equals(habilidad1.get(i))){
+                System.out.println(habilidad1.size());
+                for (int j = i; j < habilidad1.size()-1; j++) {
+                    lista[j] = habilidad1.get(j+1);
+                }
+                ArrayList <String> aux = new ArrayList <String>();
+                for (int j = 0; j < habilidad1.size()-1; j++) {
+                    aux.add(lista[j]);
+                    System.out.println(lista[j]);
+                }
+                habilidad1 = aux;
+                habilidadesAgregadas.setListData(lista);
+            }else
+            lista[i] = habilidad1.get(i);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_quitarHabilidadActionPerformed
+
+    private void crearMonstruoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMonstruoActionPerformed
+        this.name = nombre2.getText();
+        this.classs = clase2.getText();
+        this.race = raza2.getText();
+        this.level = Integer.parseInt(nivel2.getText());
+        this.xpPoints = Integer.parseInt(experiencia2.getText());
+        this.life = Integer.parseInt(vida2.getText());
+        this.iniciative = Integer.parseInt(iniciativa2.getText());
+        this.strong = Integer.parseInt(fuerza2.getText());
+        this.inteligence = Integer.parseInt(inteligencia2.getText());
+        this.charm = Integer.parseInt(carisma2.getText());
+        this.dexterity = Integer.parseInt(destreza2.getText());
+        this.wisdom = Integer.parseInt(sabiduria2.getText());
+        this.speed = Integer.parseInt(velocidad2.getText());
+        this.armor = Integer.parseInt(armadura2.getText());
+        asignarObjetos(objetos1);
+        asignarHabilidades(habilidad1);
+        CreacionDeObjetos buss = new CreacionDeObjetos ();
+        if(buss.crearObjetoMonstruo(name, classs, race, level, xpPoints, life, iniciative, strong, inteligence, charm, dexterity, wisdom, speed, armor, objetos, habilidades)){
+            JOptionPane.showMessageDialog(rootPane, "el monstruo ha sido creado");
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "el monstruo no ha sido creado");
+        }
+     
+    }//GEN-LAST:event_crearMonstruoActionPerformed
+
+    private void volver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver1ActionPerformed
+        adminGUI cons= new adminGUI();
+        cons.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_volver1ActionPerformed
+
+    private void nombre2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre2KeyTyped
+       char validar = evt.getKeyChar();
+       if((!Character.isLetter(validar))&&!((int)validar == 32)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo letras");
+           nombre2.setText(null);
+       }
+    }//GEN-LAST:event_nombre2KeyTyped
+
+    private void clase2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clase2KeyTyped
+       char validar = evt.getKeyChar();
+       if(!Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo letras");
+           clase2.setText(null);
+       }
+    }//GEN-LAST:event_clase2KeyTyped
+
+    private void raza2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_raza2KeyTyped
+       char validar = evt.getKeyChar();
+       if(!Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo letras");
+           raza2.setText(null);
+       } // TODO add your handling code here:
+    }//GEN-LAST:event_raza2KeyTyped
+
+    private void vida2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vida2KeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           vida2.setText(null);
+       }
+    }//GEN-LAST:event_vida2KeyTyped
+
+    private void nivel2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nivel2KeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           nivel2.setText(null);
+       }
+    }//GEN-LAST:event_nivel2KeyTyped
+
+    private void velocidad2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_velocidad2KeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           velocidad2.setText(null);
+       }
+    }//GEN-LAST:event_velocidad2KeyTyped
+
+    private void armadura2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_armadura2KeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           armadura2.setText(null);
+       }
+    }//GEN-LAST:event_armadura2KeyTyped
+
+    private void fuerza2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fuerza2KeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           fuerza2.setText(null);
+       }
+    }//GEN-LAST:event_fuerza2KeyTyped
+
+    private void inteligencia2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inteligencia2KeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           inteligencia2.setText(null);
+       }
+    }//GEN-LAST:event_inteligencia2KeyTyped
+
+    private void carisma2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_carisma2KeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           carisma2.setText(null);
+       }
+    }//GEN-LAST:event_carisma2KeyTyped
+
+    private void destreza2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_destreza2KeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           destreza2.setText(null);
+       }
+    }//GEN-LAST:event_destreza2KeyTyped
+
+    private void sabiduria2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sabiduria2KeyTyped
+        char validar = evt.getKeyChar();
+        if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           sabiduria2.setText(null);
+       }
+    }//GEN-LAST:event_sabiduria2KeyTyped
+
+    private void iniciativa2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_iniciativa2KeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           iniciativa2.setText(null);
+       }
+    }//GEN-LAST:event_iniciativa2KeyTyped
+
+    private void experiencia2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_experiencia2KeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           experiencia2.setText(null);
+       }
+    }//GEN-LAST:event_experiencia2KeyTyped
+    
     /**
      * @param args the command line arguments
      */
@@ -79,5 +803,100 @@ public class CrearMonstruo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agregarHabilidad;
+    private javax.swing.JButton agregarItem;
+    private javax.swing.JTextField armadura2;
+    private javax.swing.JTextField carisma2;
+    private javax.swing.JTextField clase2;
+    private javax.swing.JButton crearMonstruo;
+    private javax.swing.JTextField destreza2;
+    private javax.swing.JButton detallesHabilidad;
+    private javax.swing.JButton detallesItem;
+    private javax.swing.JTextField experiencia2;
+    private javax.swing.JTextField fuerza2;
+    private javax.swing.JList<String> habilidadesAgregadas;
+    private javax.swing.JTextField iniciativa2;
+    private javax.swing.JTextField inteligencia2;
+    private javax.swing.JList<String> itemsAgregados;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JList<String> listaHabilidades;
+    private javax.swing.JList<String> listaObjetos;
+    private javax.swing.JTextField nivel2;
+    private javax.swing.JTextField nombre2;
+    private javax.swing.JButton quitarHabilidad;
+    private javax.swing.JButton quitarItem;
+    private javax.swing.JTextField raza2;
+    private javax.swing.JTextField sabiduria2;
+    private javax.swing.JTextField velocidad2;
+    private javax.swing.JTextField vida2;
+    private javax.swing.JButton volver1;
     // End of variables declaration//GEN-END:variables
+private void asignarObjetos(ArrayList<String> objetos1) {
+        Items aux[] = new Items [5];
+        Items cons = new Items();
+        for (int i = 0; i < objetos1.size(); i++) {
+            aux[i]=cons.leerObjetoItem(objetos1.get(i));
+        }
+        setObjetos(aux);
+    }
+    
+    private void asignarHabilidades(ArrayList<String> habilidad1) {
+        Habilidad aux[] = new Habilidad [5];
+        Habilidad cons = new Habilidad();
+        for (int i = 0; i < 3; i++) {
+            aux[i]=cons.leerObjetoHabilidad(habilidad1.get(i));
+        }
+        setHabilidades(aux);
+    }
+    public Habilidad[] getHabilidades() {
+        return habilidades;
+    }
+
+    public void setHabilidades(Habilidad[] habilidades) {
+        this.habilidades = habilidades;
+    }
+
+    public Items[] getObjetos() {
+        return objetos;
+    }
+
+    public void setObjetos(Items[] objetos) {
+        this.objetos = objetos;
+    }
+    
+    public void setItemsDeListaMonstruos(ArrayList<String> nombres) {
+       String [] lista = new String [nombres.size()];
+    for (int i = 0; i < nombres.size(); i++) {
+        lista[i] = nombres.get(i);
+    }
+    this.listaObjetos.setListData(lista);
+    }
+
+    public void setHabilidadesDeListaMonstruos(ArrayList<String> nombres) {
+        String [] lista = new String [nombres.size()];
+        for (int i = 0; i < nombres.size(); i++) {
+            lista[i] = nombres.get(i);
+        }
+        this.listaHabilidades.setListData(lista);
+    }
 }

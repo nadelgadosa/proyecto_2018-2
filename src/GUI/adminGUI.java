@@ -63,6 +63,11 @@ public class adminGUI extends javax.swing.JFrame {
         });
 
         crearMonstruo.setText("crear monstruo");
+        crearMonstruo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearMonstruoActionPerformed(evt);
+            }
+        });
 
         crearItem.setText("crear item");
         crearItem.addActionListener(new java.awt.event.ActionListener() {
@@ -90,8 +95,18 @@ public class adminGUI extends javax.swing.JFrame {
         verMapas.setText("ver mapas");
 
         verNPCs.setText("ver NPCs");
+        verNPCs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verNPCsActionPerformed(evt);
+            }
+        });
 
         verMonstruos.setText("ver monstruos");
+        verMonstruos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verMonstruosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,11 +201,30 @@ public class adminGUI extends javax.swing.JFrame {
         
         CreacionDeObjetos constructor = new CreacionDeObjetos();
         
-        constructor.llenarListas();
+        constructor.llenarListasNPC();
         
         this.dispose();
         
     }//GEN-LAST:event_crearNPCActionPerformed
+
+    private void verNPCsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verNPCsActionPerformed
+        CreacionDeObjetos cons = new CreacionDeObjetos();
+        cons.NPCs();
+        this.dispose();
+    }//GEN-LAST:event_verNPCsActionPerformed
+
+    private void crearMonstruoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMonstruoActionPerformed
+        CreacionDeObjetos constructor = new CreacionDeObjetos();
+        constructor.llenarListasMonstruos();
+        this.dispose();
+        
+    }//GEN-LAST:event_crearMonstruoActionPerformed
+
+    private void verMonstruosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verMonstruosActionPerformed
+        CreacionDeObjetos cons = new CreacionDeObjetos();
+        cons.monstruos();
+        this.dispose(); 
+    }//GEN-LAST:event_verMonstruosActionPerformed
 
     /**
      * @param args the command line arguments

@@ -60,6 +60,11 @@ public class CrearItem extends javax.swing.JFrame {
         description.setRows(5);
         jScrollPane1.setViewportView(description);
 
+        level.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                levelActionPerformed(evt);
+            }
+        });
         level.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 levelKeyTyped(evt);
@@ -164,7 +169,7 @@ public class CrearItem extends javax.swing.JFrame {
     private void levelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_levelKeyTyped
        char validar = evt.getKeyChar();
        if(Character.isLetter(validar)){
-           //getToolkit().beep();
+           getToolkit().beep();
            evt.consume();
            JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
            level.setText(null);
@@ -177,10 +182,10 @@ public class CrearItem extends javax.swing.JFrame {
     private void modificatorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_modificatorKeyTyped
     char validar = evt.getKeyChar();
        if(Character.isLetter(validar)){
-           //getToolkit().beep();
+           getToolkit().beep();
            evt.consume();
            JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
-           level.setText(null);
+           modificator.setText(null);
            
        }        // TODO add your handling code here:
     }//GEN-LAST:event_modificatorKeyTyped
@@ -190,6 +195,10 @@ public class CrearItem extends javax.swing.JFrame {
        cons.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_volverActionPerformed
+
+    private void levelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_levelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_levelActionPerformed
 
     /**
      * @param args the command line arguments

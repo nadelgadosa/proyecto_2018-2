@@ -66,12 +66,18 @@ public class Items implements Serializable{
         
         return objeto;
     }
+    
+    
     public void actualizarLista(String nombre) {
        ArrayList lista = new ArrayList();
+       String aux ;
         try {
-            Scanner sc = new Scanner(new File("data\\Items\\Items.txt"));
-            while(sc.hasNext()){
-                lista.add(sc.nextLine());
+            Scanner sc = new Scanner(new File("data\\Items\\Items.txt"));   
+            while(sc.hasNext()){                                                
+                aux=sc.nextLine();
+                if(aux.equals(nombre)){
+                }else
+                lista.add(aux);
             }
             
             lista.add(nombre);

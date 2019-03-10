@@ -24,11 +24,6 @@ public class CrearNPC extends javax.swing.JFrame {
    private ArrayList <String> objetos1 = new ArrayList <String>();
    private ArrayList <String> habilidad1 = new ArrayList <String>();
    private Items objetos[] = new Items [5]; 
-    
-    
-    
-    
-    
     /**
      * Creates new form CrearNPC
      */
@@ -128,6 +123,110 @@ public class CrearNPC extends javax.swing.JFrame {
 
         jLabel14.setText("xp");
 
+        nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nombreKeyTyped(evt);
+            }
+        });
+
+        clase.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                claseKeyTyped(evt);
+            }
+        });
+
+        raza.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                razaKeyTyped(evt);
+            }
+        });
+
+        vida.setText("0");
+        vida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vidaActionPerformed(evt);
+            }
+        });
+        vida.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                vidaKeyTyped(evt);
+            }
+        });
+
+        nivel.setText("0");
+        nivel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nivelKeyTyped(evt);
+            }
+        });
+
+        velocidad.setText("0");
+        velocidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                velocidadKeyTyped(evt);
+            }
+        });
+
+        armadura.setText("0");
+        armadura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                armaduraActionPerformed(evt);
+            }
+        });
+        armadura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                armaduraKeyTyped(evt);
+            }
+        });
+
+        fuerza.setText("0");
+        fuerza.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fuerzaKeyTyped(evt);
+            }
+        });
+
+        inteligencia.setText("0");
+        inteligencia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inteligenciaKeyTyped(evt);
+            }
+        });
+
+        carisma.setText("0");
+        carisma.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                carismaKeyTyped(evt);
+            }
+        });
+
+        destreza.setText("0");
+        destreza.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                destrezaKeyTyped(evt);
+            }
+        });
+
+        sabiduria.setText("0");
+        sabiduria.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sabiduriaKeyTyped(evt);
+            }
+        });
+
+        iniciativa.setText("0");
+        iniciativa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                iniciativaKeyTyped(evt);
+            }
+        });
+
+        experiencia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                experienciaKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -153,7 +252,7 @@ public class CrearNPC extends javax.swing.JFrame {
                     .addComponent(nombre)
                     .addComponent(clase)
                     .addComponent(raza)
-                    .addComponent(vida)
+                    .addComponent(vida, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                     .addComponent(nivel)
                     .addComponent(velocidad)
                     .addComponent(armadura)
@@ -163,7 +262,8 @@ public class CrearNPC extends javax.swing.JFrame {
                     .addComponent(destreza)
                     .addComponent(sabiduria)
                     .addComponent(iniciativa)
-                    .addComponent(experiencia, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)))
+                    .addComponent(experiencia))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,7 +474,7 @@ public class CrearNPC extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -406,6 +506,7 @@ public class CrearNPC extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void volver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver1ActionPerformed
         adminGUI cons= new adminGUI();
         cons.setVisible(true);
@@ -434,10 +535,7 @@ public class CrearNPC extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "el personaje ha sido creado");
         }else{
             JOptionPane.showMessageDialog(rootPane, "el personaje no ha sido creado");
-        }
-        
-        
-        
+        }   
     }//GEN-LAST:event_crearNPCActionPerformed
 
     private void detallesItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detallesItemActionPerformed
@@ -540,7 +638,146 @@ public class CrearNPC extends javax.swing.JFrame {
                 lista[i] = habilidad1.get(i);
                 }        // TODO add your handling code here:
     }//GEN-LAST:event_quitarHabilidadActionPerformed
+    private void nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreKeyTyped
+       char validar = evt.getKeyChar();
+       if((!Character.isLetter(validar))&&!((int)validar == 32)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo letras");
+           nombre.setText(null);
+       }
+    }//GEN-LAST:event_nombreKeyTyped
+    private void claseKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_claseKeyTyped
+       char validar = evt.getKeyChar();
+       if(!Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo letras");
+           clase.setText(null);   
+       }
+    }//GEN-LAST:event_claseKeyTyped
+    private void razaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_razaKeyTyped
+        char validar = evt.getKeyChar();
+       if(!Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo letras");
+           raza.setText(null);
+       }
+    }//GEN-LAST:event_razaKeyTyped
+    private void vidaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vidaKeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           vida.setText(null);
+       }
+    }//GEN-LAST:event_vidaKeyTyped
+    private void nivelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nivelKeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           nivel.setText(null);
+       }
+    }//GEN-LAST:event_nivelKeyTyped
+    private void velocidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_velocidadKeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           velocidad.setText(null);
+       }
+    }//GEN-LAST:event_velocidadKeyTyped
+    private void armaduraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_armaduraKeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           armadura.setText(null);
+       }
+    }//GEN-LAST:event_armaduraKeyTyped
+    private void fuerzaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fuerzaKeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           fuerza.setText(null);
+       }
+    }//GEN-LAST:event_fuerzaKeyTyped
+    private void inteligenciaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inteligenciaKeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           inteligencia.setText(null);
+       }
+    }//GEN-LAST:event_inteligenciaKeyTyped
+    private void carismaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_carismaKeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           carisma.setText(null);
+       }
+    }//GEN-LAST:event_carismaKeyTyped
+    private void destrezaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_destrezaKeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           destreza.setText(null);
+       }
+    }//GEN-LAST:event_destrezaKeyTyped
+    private void sabiduriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sabiduriaKeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           sabiduria.setText(null);
+       }
+    }//GEN-LAST:event_sabiduriaKeyTyped
+    private void iniciativaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_iniciativaKeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           iniciativa.setText(null);
+       }
+    }//GEN-LAST:event_iniciativaKeyTyped
+    private void experienciaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_experienciaKeyTyped
+       char validar = evt.getKeyChar();
+       if(Character.isLetter(validar)){
+           getToolkit().beep();
+           evt.consume();
+           JOptionPane.showMessageDialog(rootPane, "ingrece solo numeros");
+           experiencia.setText(null);
+       }
+    }//GEN-LAST:event_experienciaKeyTyped
 
+    private void vidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vidaActionPerformed
+
+    private void armaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_armaduraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_armaduraActionPerformed
+    
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -634,7 +871,7 @@ public class CrearNPC extends javax.swing.JFrame {
     this.listaObjetos.setListData(lista);
     }
 
-    public void setHabilidadesDeLista(ArrayList<String> nombres) {
+    public void setHabilidadesDeListaNPCs(ArrayList<String> nombres) {
         String [] lista = new String [nombres.size()];
         for (int i = 0; i < nombres.size(); i++) {
             lista[i] = nombres.get(i);
@@ -645,15 +882,26 @@ public class CrearNPC extends javax.swing.JFrame {
     private void asignarObjetos(ArrayList<String> objetos1) {
         Items aux[] = new Items [5];
         Items cons = new Items();
+        if(!(objetos1.size()==aux.length)){
+            for (int i = 0; i < aux.length; i++) {
+                aux[i]=null;
+            }
+        }
         for (int i = 0; i < objetos1.size(); i++) {
             aux[i]=cons.leerObjetoItem(objetos1.get(i));
         }
+        
         setObjetos(aux);
     }
     
     private void asignarHabilidades(ArrayList<String> habilidad1) {
         Habilidad aux[] = new Habilidad [5];
         Habilidad cons = new Habilidad();
+        if(!(habilidad1.size()==aux.length)){
+            for (int i = 0; i < aux.length; i++) {
+                aux[i]=null;
+            }
+        }
         for (int i = 0; i < 3; i++) {
             aux[i]=cons.leerObjetoHabilidad(habilidad1.get(i));
         }

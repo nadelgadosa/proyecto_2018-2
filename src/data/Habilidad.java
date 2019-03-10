@@ -66,10 +66,14 @@ private int modificador, usos;
      
       public void actualizarLista(String nombre) {
        ArrayList lista = new ArrayList();
-        try {
-            Scanner sc = new Scanner(new File("data\\Habilidades\\Habilidades.txt"));
-            while(sc.hasNext()){
-                lista.add(sc.nextLine());
+       String aux;
+       try {
+            Scanner sc = new Scanner(new File("data\\Habilidades\\Habilidades.txt"));   
+            while(sc.hasNext()){                                                
+                aux=sc.nextLine();
+                if(aux.equals(nombre)){
+                }else
+                lista.add(aux);
             }
             
             lista.add(nombre);

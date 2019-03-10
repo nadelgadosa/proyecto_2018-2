@@ -3,11 +3,13 @@ package data;
 import java.io.File;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Personaje implements Serializable{
    private String nombre, clase, raza, trasfondo, personalidad, juego;
@@ -47,26 +49,59 @@ public class Personaje implements Serializable{
     public Personaje() {
     }
     
-    
-    
-    
-    
-    
-    public void savePersonaje(Personaje personaje){
-        
-        
+    public boolean savePersonajeNPC(Personaje personaje){
         final Path archivoSer = new File("data\\NPCs\\"+personaje.getNombre()+".ser").toPath();
         try {
             final ObjectOutputStream guardarPersonaje = new ObjectOutputStream(Files.newOutputStream(archivoSer));
             guardarPersonaje.writeObject(personaje);
             guardarPersonaje.close();
+            return true;
         } catch (Exception ex) {
-            
+            return false;
         }
         
         
     }
-    
+    public boolean savePersonaje(Personaje personaje){
+        final Path archivoSer = new File("data\\NPCs\\"+personaje.getNombre()+".ser").toPath();
+        try {
+            final ObjectOutputStream guardarPersonaje = new ObjectOutputStream(Files.newOutputStream(archivoSer));
+            guardarPersonaje.writeObject(personaje);
+            guardarPersonaje.close();
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+        
+        
+    }
+    public boolean savePersonajeMonstruo(Personaje personaje){
+        final Path archivoSer = new File("data\\Monstruos\\"+personaje.getNombre()+".ser").toPath();
+        try {
+            final ObjectOutputStream guardarPersonaje = new ObjectOutputStream(Files.newOutputStream(archivoSer));
+            guardarPersonaje.writeObject(personaje);
+            guardarPersonaje.close();
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+        
+        
+    }
+    public Personaje leerObjetoPersonajeMonstruo(String nombreObjeto){
+        Personaje objeto = new Personaje();
+      try{
+            
+            final Path archivoSer = new File("data\\Monstruos\\"+nombreObjeto+".ser").toPath();
+            final ObjectInputStream leerUsuario = new ObjectInputStream(Files.newInputStream(archivoSer));
+            objeto  = (Personaje)leerUsuario.readObject();
+            leerUsuario.close();
+            
+        }catch(Exception e){
+                System.out.println(e);   
+        }  
+      return objeto;
+    }
     public Personaje leerObjetoPersonaje(String nombreObjeto){
         Personaje objeto = new Personaje();
       try{
@@ -81,7 +116,6 @@ public class Personaje implements Serializable{
         }  
       return objeto;
     }
-    
     public ArrayList<String> leerListaNPCs() {
         ArrayList<String> listaNombres = new ArrayList();
         try {
@@ -96,9 +130,67 @@ public class Personaje implements Serializable{
         return listaNombres;
         
     }
+    public ArrayList<String> leerListaMonstruos() {
+        ArrayList<String> listaNombres = new ArrayList();
+        try {
+            Scanner sc = new Scanner(new File("data\\Monstruos\\Monstruos.txt"));
+             while(sc.hasNext()){
+                listaNombres.add(sc.nextLine());
+             }
+                
+            }catch(Exception e){
+                System.out.println(e);
+            }
+        return listaNombres;
+        
+    }
      
-    
-    
+    public void actualizarListaNPCs(String nombre) {
+       ArrayList lista = new ArrayList();
+       String aux;
+       try {
+            Scanner sc = new Scanner(new File("data\\NPCs\\NPCs.txt"));
+           while(sc.hasNext()){                                                
+                aux=sc.nextLine();
+                if(aux.equals(nombre)){
+                }else
+                lista.add(aux);
+            }
+            lista.add(nombre);
+            File outFile = new File("data\\NPCs\\NPCs.txt");
+            PrintWriter pw = new PrintWriter(outFile);
+            for (int i = 0; i < lista.size(); i++) {
+                
+                pw.println(lista.get(i));
+            }
+            pw.close();
+        } catch (Exception e) {
+        }
+       
+    }
+    public void actualizarListaMonstruos(String nombre) {
+       ArrayList lista = new ArrayList();
+       String aux;
+       try {
+            Scanner sc = new Scanner(new File("data\\Monstruos\\Monstruos.txt"));
+           while(sc.hasNext()){                                                
+                aux=sc.nextLine();
+                if(aux.equals(nombre)){
+                }else
+                lista.add(aux);
+            }
+            lista.add(nombre);
+            File outFile = new File("data\\Monstruos\\Monstruos.txt");
+            PrintWriter pw = new PrintWriter(outFile);
+            for (int i = 0; i < lista.size(); i++) {
+                
+                pw.println(lista.get(i));
+            }
+            pw.close();
+        } catch (Exception e) {
+        }
+       
+    }
     
     public String getNombre() {
         return nombre;
@@ -263,4 +355,25 @@ public class Personaje implements Serializable{
         this.objetos = objetos;
         this.habilidades = habilidades;
     }
+    public void Monstruo(String name, String classs, String race, int level, int xpPoints, int life, int iniciative, int strong, int inteligence, int charm, int dexterity, int wisdom, int speed, int armor, Items[] objetos, Habilidad[] habilidades) {
+        System.out.println("metodo data");
+        this.nombre = name;
+        this.clase = classs;
+        this.raza = race;
+        this.nivel = level;
+        this.xpPoints = xpPoints;
+        this.heallPoints = life;
+        this.iniciativa = iniciative;
+        this.fuerza = strong;
+        this.inteligencia = inteligence;
+        this.carisma = charm;
+        this.destreza = dexterity;
+        this.sabiduria = wisdom;
+        this.velocidad = speed;
+        this.armadura = armor;
+        this.objetos = objetos;
+        this.habilidades = habilidades;
+        System.out.println(this.nombre+this.clase+this.raza+this.nivel+this.xpPoints+this.heallPoints+this.iniciativa+this.fuerza+this.inteligencia+this.carisma+this.destreza+this.sabiduria+this.velocidad+this.armadura+this.objetos+this.habilidades );
+    }
+
 }

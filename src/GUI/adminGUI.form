@@ -123,6 +123,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="crear monstruo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="crearMonstruoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="crearItem">
       <Properties>
@@ -162,11 +165,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="ver NPCs"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verNPCsActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="verMonstruos">
       <Properties>
         <Property name="text" type="java.lang.String" value="ver monstruos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verMonstruosActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

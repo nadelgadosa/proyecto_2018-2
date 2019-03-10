@@ -1,6 +1,9 @@
 cinturon
-escudo
 pocion de vida
 lanza
 medallon
 espada
+magias proibidas y tabu
+cuchillo
+baston
+escudo
